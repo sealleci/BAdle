@@ -1,0 +1,46 @@
+name: Deploy Students
+run-name: ${{ github.actor }} sensei is deploying students.
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout workplace
+      uses: actions/checkout@v4
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React App
+      run: npm run build
+
+    - name: Move 'dist' to '_site'
+      run: mkdir _site && mv dist/* _site
+
+    - name: Change permission of '_site'
+      run: chmod -c -R +rX "_site"
+
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy students to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
