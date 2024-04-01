@@ -11,7 +11,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ['react', 'react-dom', 'mobx', 'mobx-react-lite'],
-          ui: ['@radix-ui/themes'],
+          ui: ['@radix-ui/themes', '@radix-ui/themes/styles.css'],
           data: ['./src/assets/data/students.json']
         }
       }

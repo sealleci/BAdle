@@ -1,13 +1,13 @@
 import type { LanguageType } from '../types/language.ts'
-import type { AttackType, DefenseType, StudentRole, StudentSchool } from '../types/student.ts'
+import type { DamageType, ArmorType, StudentRole, StudentSchool } from '../types/student.ts'
 
 const RED_COLOR: string = ''
 const YELLOW_COLOR: string = ''
 const BLUE_COLOR: string = ''
 const PURPLE_COLOR: string = ''
 
-function getAttackTextAndColor(attackType: AttackType, language: LanguageType): [string, string] {
-    switch (attackType) {
+function getAttackTextAndColor(damageType: DamageType, language: LanguageType): [string, string] {
+    switch (damageType) {
 
         case 'explosive':
             switch (language) {
@@ -59,8 +59,8 @@ function getAttackTextAndColor(attackType: AttackType, language: LanguageType): 
     }
 }
 
-function getDefenseTextAndColor(defenseType: DefenseType, language: LanguageType): [string, string] {
-    switch (defenseType) {
+function getDefenseTextAndColor(armorType: ArmorType, language: LanguageType): [string, string] {
+    switch (armorType) {
         case 'light':
             switch (language) {
                 case 'en':
