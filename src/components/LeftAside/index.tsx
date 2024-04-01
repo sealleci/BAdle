@@ -22,8 +22,8 @@ export default function LeftAside() {
                 width='100%'
             >
                 <img
-                    src="https://webcnstatic.yostar.net/ba_cn_web/prod/web/assets/logo_2.e1693a80.png"
-                    alt="logo"
+                    src='https://webcnstatic.yostar.net/ba_cn_web/prod/web/assets/logo_2.e1693a80.png'
+                    alt='logo'
                     draggable={false}
                     width='120px'
 

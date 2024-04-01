@@ -1,0 +1,19 @@
+$transition-duration: 0.2s;
+
+.search-student-item {
+    margin-right: 1rem;
+    transition: background-color $transition-duration;
+
+    &.search-student-item--hover {
+        background-color: rgba(0, 0, 0, 0.1);
+
+        .select-student-btn {
+            opacity: 1;
+        }
+    }
+
+    .select-student-btn {
+        opacity: 0;
+        transition: opacity $transition-duration;
+    }
+}

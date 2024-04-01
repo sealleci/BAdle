@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-scripts/*.json
 dist
+crawler/*
+!crawler/main.js

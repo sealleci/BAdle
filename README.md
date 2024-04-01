@@ -14,3 +14,11 @@ A simple wordle game featured [Blue Archive](https://www.youtube.com/channel/UCs
 - Sass
 - MobX
 - Radix UI
+
+## TODO
+
+- Korean Language
+- Arona and Prana
+- Cookie storage
+- Daily mode and Endless modes
+- Mobile layout

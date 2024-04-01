@@ -1,1 +1,3973 @@
-{}
+{
+    "students": {
+        "airi": {
+            "displayName": {
+                "full": {
+                    "en": "Kurimura Airi",
+                    "zh_cn": "栗村 爱理",
+                    "jp": "栗村 アイリ"
+                },
+                "abbrev": {
+                    "en": "Airi",
+                    "zh_cn": "爱理",
+                    "jp": "アイリ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23000.webp"
+        },
+        "akane": {
+            "displayName": {
+                "full": {
+                    "en": "Murokasa Akane",
+                    "zh_cn": "室笠 茜",
+                    "jp": "室笠 アカネ"
+                },
+                "abbrev": {
+                    "en": "Akane",
+                    "zh_cn": "茜",
+                    "jp": "アカネ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13000.webp"
+        },
+        "akane_bunny": {
+            "displayName": {
+                "full": {
+                    "en": "Murokasa Akane",
+                    "zh_cn": "室笠 茜",
+                    "jp": "室笠 アカネ"
+                },
+                "abbrev": {
+                    "en": "Akane",
+                    "zh_cn": "茜",
+                    "jp": "アカネ"
+                }
+            },
+            "variant": {
+                "en": "Bunny",
+                "zh_cn": "兔女郎",
+                "jp": "バニーガール"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20019.webp"
+        },
+        "akari": {
+            "displayName": {
+                "full": {
+                    "en": "Wanibuchi Akari",
+                    "zh_cn": "鳄渊 明里",
+                    "jp": "鰐渕 アカリ"
+                },
+                "abbrev": {
+                    "en": "Akari",
+                    "zh_cn": "明里",
+                    "jp": "アカリ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/13002.webp"
+        },
+        "akari_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Wanibuchi Akari",
+                    "zh_cn": "鳄渊 明里",
+                    "jp": "鰐渕 アカリ"
+                },
+                "abbrev": {
+                    "en": "Akari",
+                    "zh_cn": "明里",
+                    "jp": "アカリ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "t.s.",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20034.webp"
+        },
+        "ako": {
+            "displayName": {
+                "full": {
+                    "en": "Amau Ako",
+                    "zh_cn": "天雨 亚子",
+                    "jp": "天雨 アコ"
+                },
+                "abbrev": {
+                    "en": "Ako",
+                    "zh_cn": "亚子",
+                    "jp": "アコ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20008.webp"
+        },
+        "ako_dress": {
+            "displayName": {
+                "full": {
+                    "en": "Amau Ako",
+                    "zh_cn": "天雨 亚子",
+                    "jp": "天雨 アコ"
+                },
+                "abbrev": {
+                    "en": "Ako",
+                    "zh_cn": "亚子",
+                    "jp": "アコ"
+                }
+            },
+            "variant": {
+                "en": "Dress",
+                "zh_cn": "礼服",
+                "jp": "ドレス"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10087.webp"
+        },
+        "aris": {
+            "displayName": {
+                "full": {
+                    "en": "Tendou Aris",
+                    "zh_cn": "天童 爱丽丝",
+                    "jp": "天童 アリス"
+                },
+                "abbrev": {
+                    "en": "Aris",
+                    "zh_cn": "爱丽丝",
+                    "jp": "アリス"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "rg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10015.webp"
+        },
+        "aris_maid": {
+            "displayName": {
+                "full": {
+                    "en": "Tendou Aris",
+                    "zh_cn": "天童 爱丽丝",
+                    "jp": "天童 アリス"
+                },
+                "abbrev": {
+                    "en": "Aris",
+                    "zh_cn": "爱丽丝",
+                    "jp": "アリス"
+                }
+            },
+            "variant": {
+                "en": "Maid",
+                "zh_cn": "女仆",
+                "jp": "メイド"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "rg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10066.webp"
+        },
+        "aru_dress": {
+            "displayName": {
+                "full": {
+                    "en": "Rikuhachima Aru",
+                    "zh_cn": "陆八魔 阿露",
+                    "jp": "陸八魔 アル"
+                },
+                "abbrev": {
+                    "en": "Aru",
+                    "zh_cn": "阿露",
+                    "jp": "アル"
+                }
+            },
+            "variant": {
+                "en": "Dress",
+                "zh_cn": "礼服",
+                "jp": "ドレス"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10089.webp"
+        },
+        "aru": {
+            "displayName": {
+                "full": {
+                    "en": "Rikuhachima Aru",
+                    "zh_cn": "陆八魔 爱露",
+                    "jp": "陸八魔 アル"
+                },
+                "abbrev": {
+                    "en": "Aru",
+                    "zh_cn": "爱露",
+                    "jp": "アル"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10000.webp"
+        },
+        "aru_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Rikuhachima Aru",
+                    "zh_cn": "陆八魔 爱露",
+                    "jp": "陸八魔 アル"
+                },
+                "abbrev": {
+                    "en": "Aru",
+                    "zh_cn": "爱露",
+                    "jp": "アル"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10031.webp"
+        },
+        "asuna": {
+            "displayName": {
+                "full": {
+                    "en": "Ichinose Asuna",
+                    "zh_cn": "一之濑 明日奈",
+                    "jp": "一之瀬 アスナ"
+                },
+                "abbrev": {
+                    "en": "Asuna",
+                    "zh_cn": "明日奈",
+                    "jp": "アスナ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/16001.webp"
+        },
+        "asuna_bunny": {
+            "displayName": {
+                "full": {
+                    "en": "Ichinose Asuna",
+                    "zh_cn": "一之濑 明日奈",
+                    "jp": "一之瀬 アスナ"
+                },
+                "abbrev": {
+                    "en": "Asuna",
+                    "zh_cn": "明日奈",
+                    "jp": "アスナ"
+                }
+            },
+            "variant": {
+                "en": "Bunny",
+                "zh_cn": "兔女郎",
+                "jp": "バニーガール"
+            },
+            "school": "millennium",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10028.webp"
+        },
+        "ayane": {
+            "displayName": {
+                "full": {
+                    "en": "Okusora Ayane",
+                    "zh_cn": "奥空 绫音",
+                    "jp": "奥空 アヤネ"
+                },
+                "abbrev": {
+                    "en": "Ayane",
+                    "zh_cn": "绫音",
+                    "jp": "アヤネ"
+                }
+            },
+            "variant": {},
+            "school": "abydos",
+            "role": "healer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23005.webp"
+        },
+        "ayane_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Okusora Ayane",
+                    "zh_cn": "奥空 绫音",
+                    "jp": "奥空 アヤネ"
+                },
+                "abbrev": {
+                    "en": "Ayane",
+                    "zh_cn": "绫音",
+                    "jp": "アヤネ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "abydos",
+            "role": "t.s.",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26007.webp"
+        },
+        "atsuko": {
+            "displayName": {
+                "full": {
+                    "en": "Hakari Atsuko",
+                    "zh_cn": "秤 亚津子",
+                    "jp": "秤 アツコ"
+                },
+                "abbrev": {
+                    "en": "Atsuko",
+                    "zh_cn": "亚津子",
+                    "jp": "アツコ"
+                }
+            },
+            "variant": {},
+            "school": "arius",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10042.webp"
+        },
+        "azusa": {
+            "displayName": {
+                "full": {
+                    "en": "Shirasu Azusa",
+                    "zh_cn": "白洲 梓",
+                    "jp": "白洲 アズサ"
+                },
+                "abbrev": {
+                    "en": "Azusa",
+                    "zh_cn": "梓",
+                    "jp": "アズサ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10019.webp"
+        },
+        "cherino_hotspring": {
+            "displayName": {
+                "full": {
+                    "en": "Renkawa Cherino",
+                    "zh_cn": "连河 切里诺",
+                    "jp": "連河 チェリノ"
+                },
+                "abbrev": {
+                    "en": "Cherino",
+                    "zh_cn": "切里诺",
+                    "jp": "チェリノ"
+                }
+            },
+            "variant": {
+                "en": "Hot Spring",
+                "zh_cn": "温泉",
+                "jp": "温泉"
+            },
+            "school": "redwinter",
+            "role": "t.s.",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20009.webp"
+        },
+        "azusa_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Shirasu Azusa",
+                    "zh_cn": "白洲 梓",
+                    "jp": "白洲 アズサ"
+                },
+                "abbrev": {
+                    "en": "Azusa",
+                    "zh_cn": "梓",
+                    "jp": "アズサ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10021.webp"
+        },
+        "chihiro": {
+            "displayName": {
+                "full": {
+                    "en": "Kagami Chihiro",
+                    "zh_cn": "各务 千寻",
+                    "jp": "各務 チヒロ"
+                },
+                "abbrev": {
+                    "en": "Chihiro",
+                    "zh_cn": "千寻",
+                    "jp": "チヒロ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20013.webp"
+        },
+        "cherino": {
+            "displayName": {
+                "full": {
+                    "en": "Renkawa Cherino",
+                    "zh_cn": "连河 切里诺",
+                    "jp": "連河 チェリノ"
+                },
+                "abbrev": {
+                    "en": "Cherino",
+                    "zh_cn": "切里诺",
+                    "jp": "チェリノ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10017.webp"
+        },
+        "chinatsu": {
+            "displayName": {
+                "full": {
+                    "en": "Hinomiya Chinatsu",
+                    "zh_cn": "火宫 千夏",
+                    "jp": "火宮 チナツ"
+                },
+                "abbrev": {
+                    "en": "Chinatsu",
+                    "zh_cn": "千夏",
+                    "jp": "チナツ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "healer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26000.webp"
+        },
+        "chinatsu_hotspring": {
+            "displayName": {
+                "full": {
+                    "en": "Hinomiya Chinatsu",
+                    "zh_cn": "火宫 千夏",
+                    "jp": "火宮 チナツ"
+                },
+                "abbrev": {
+                    "en": "Chinatsu",
+                    "zh_cn": "千夏",
+                    "jp": "チナツ"
+                }
+            },
+            "variant": {
+                "en": "Hot Spring",
+                "zh_cn": "温泉",
+                "jp": "温泉"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10030.webp"
+        },
+        "chise": {
+            "displayName": {
+                "full": {
+                    "en": "Waraku Chise",
+                    "zh_cn": "和乐 千世",
+                    "jp": "和楽 チセ"
+                },
+                "abbrev": {
+                    "en": "Chise",
+                    "zh_cn": "千世",
+                    "jp": "チセ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/13001.webp"
+        },
+        "chise_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Waraku Chise",
+                    "zh_cn": "和乐 千世",
+                    "jp": "和楽 チセ"
+                },
+                "abbrev": {
+                    "en": "Chise",
+                    "zh_cn": "千世",
+                    "jp": "チセ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/10047.webp"
+        },
+        "eimi": {
+            "displayName": {
+                "full": {
+                    "en": "Izumimoto Eimi",
+                    "zh_cn": "和泉元 艾米",
+                    "jp": "和泉元 エイミ"
+                },
+                "abbrev": {
+                    "en": "Eimi",
+                    "zh_cn": "艾米",
+                    "jp": "エイミ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10001.webp"
+        },
+        "eimi_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Izumimoto Eimi",
+                    "zh_cn": "和泉元 艾米",
+                    "jp": "和泉元 エイミ"
+                },
+                "abbrev": {
+                    "en": "Eimi",
+                    "zh_cn": "艾米",
+                    "jp": "エイミ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "millennium",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20032.webp"
+        },
+        "fubuki": {
+            "displayName": {
+                "full": {
+                    "en": "Nemugaki Fubuki",
+                    "zh_cn": "合欢垣 吹雪",
+                    "jp": "合歓垣 フブキ"
+                },
+                "abbrev": {
+                    "en": "Fubuki",
+                    "zh_cn": "吹雪",
+                    "jp": "フブキ"
+                }
+            },
+            "variant": {},
+            "school": "valkyrie",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/16008.webp"
+        },
+        "fuuka": {
+            "displayName": {
+                "full": {
+                    "en": "Aikiyo Fuuka",
+                    "zh_cn": "爱清 风香",
+                    "jp": "愛清 フウカ"
+                },
+                "abbrev": {
+                    "en": "Fuuka",
+                    "zh_cn": "风香",
+                    "jp": "フウカ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "healer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23001.webp"
+        },
+        "hanae": {
+            "displayName": {
+                "full": {
+                    "en": "Asagao Hanae",
+                    "zh_cn": "朝颜 花江",
+                    "jp": "朝顔 ハナエ"
+                },
+                "abbrev": {
+                    "en": "Hanae",
+                    "zh_cn": "花江",
+                    "jp": "ハナエ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/23002.webp"
+        },
+        "hanako": {
+            "displayName": {
+                "full": {
+                    "en": "Urawa Hanako",
+                    "zh_cn": "浦和 花子",
+                    "jp": "浦和 ハナコ"
+                },
+                "abbrev": {
+                    "en": "Hanako",
+                    "zh_cn": "花子",
+                    "jp": "ハナコ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/23007.webp"
+        },
+        "fuuka_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Aikiyo Fuuka",
+                    "zh_cn": "爱清 风香",
+                    "jp": "愛清 フウカ"
+                },
+                "abbrev": {
+                    "en": "Fuuka",
+                    "zh_cn": "风香",
+                    "jp": "フウカ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20022.webp"
+        },
+        "hanae_christmas": {
+            "displayName": {
+                "full": {
+                    "en": "Asagao Hanae",
+                    "zh_cn": "朝颜 花江",
+                    "jp": "朝顔 ハナエ"
+                },
+                "abbrev": {
+                    "en": "Hanae",
+                    "zh_cn": "花江",
+                    "jp": "ハナエ"
+                }
+            },
+            "variant": {
+                "en": "Christmas",
+                "zh_cn": "圣诞节",
+                "jp": "クリスマス"
+            },
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20021.webp"
+        },
+        "hanako_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Urawa Hanako",
+                    "zh_cn": "浦和 花子",
+                    "jp": "浦和 ハナコ"
+                },
+                "abbrev": {
+                    "en": "Hanako",
+                    "zh_cn": "花子",
+                    "jp": "ハナコ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10074.webp"
+        },
+        "hare": {
+            "displayName": {
+                "full": {
+                    "en": "Omagari Hare",
+                    "zh_cn": "小钩 晴",
+                    "jp": "小鈎 ハレ"
+                },
+                "abbrev": {
+                    "en": "Hare",
+                    "zh_cn": "晴",
+                    "jp": "ハレ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/23003.webp"
+        },
+        "hare_camping": {
+            "displayName": {
+                "full": {
+                    "en": "Omagari Hare",
+                    "zh_cn": "小钩 晴",
+                    "jp": "小鈎 ハレ"
+                },
+                "abbrev": {
+                    "en": "Hare",
+                    "zh_cn": "晴",
+                    "jp": "ハレ"
+                }
+            },
+            "variant": {
+                "en": "Camping",
+                "zh_cn": "露营",
+                "jp": "キャンプ"
+            },
+            "school": "millennium",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10085.webp"
+        },
+        "haruka": {
+            "displayName": {
+                "full": {
+                    "en": "Igusa Haruka",
+                    "zh_cn": "伊草 春香",
+                    "jp": "伊草 ハルカ"
+                },
+                "abbrev": {
+                    "en": "Haruka",
+                    "zh_cn": "春香",
+                    "jp": "ハルカ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16000.webp"
+        },
+        "haruka_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Igusa Haruka",
+                    "zh_cn": "伊草 春香",
+                    "jp": "伊草 ハルカ"
+                },
+                "abbrev": {
+                    "en": "Haruka",
+                    "zh_cn": "春香",
+                    "jp": "ハルカ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20025.webp"
+        },
+        "haruna_track": {
+            "displayName": {
+                "full": {
+                    "en": "Kurodate Haruna",
+                    "zh_cn": "黑馆 晴奈",
+                    "jp": "黒舘 ハルナ"
+                },
+                "abbrev": {
+                    "en": "Haruna",
+                    "zh_cn": "晴奈",
+                    "jp": "ハルナ"
+                }
+            },
+            "variant": {
+                "en": "Track",
+                "zh_cn": "运动服",
+                "jp": "体操服"
+            },
+            "school": "gehenna",
+            "role": "healer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20030.webp"
+        },
+        "haruna": {
+            "displayName": {
+                "full": {
+                    "en": "Kurodate Haruna",
+                    "zh_cn": "黑馆 晴奈",
+                    "jp": "黒舘 ハルナ"
+                },
+                "abbrev": {
+                    "en": "Haruna",
+                    "zh_cn": "晴奈",
+                    "jp": "ハルナ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10002.webp"
+        },
+        "haruna_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Kurodate Haruna",
+                    "zh_cn": "黑馆 晴奈",
+                    "jp": "黒舘 ハルナ"
+                },
+                "abbrev": {
+                    "en": "Haruna",
+                    "zh_cn": "晴奈",
+                    "jp": "ハルナ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10057.webp"
+        },
+        "hasumi": {
+            "displayName": {
+                "full": {
+                    "en": "Hanekawa Hasumi",
+                    "zh_cn": "羽川 莲见",
+                    "jp": "羽川 ハスミ"
+                },
+                "abbrev": {
+                    "en": "Hasumi",
+                    "zh_cn": "莲见",
+                    "jp": "ハスミ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/13003.webp"
+        },
+        "hasumi_track": {
+            "displayName": {
+                "full": {
+                    "en": "Hanekawa Hasumi",
+                    "zh_cn": "羽川 莲见",
+                    "jp": "羽川 ハスミ"
+                },
+                "abbrev": {
+                    "en": "Hasumi",
+                    "zh_cn": "莲见",
+                    "jp": "ハスミ"
+                }
+            },
+            "variant": {
+                "en": "Track",
+                "zh_cn": "运动服",
+                "jp": "体操服"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/16011.webp"
+        },
+        "hatsune_miku": {
+            "displayName": {
+                "full": {
+                    "en": "Hatsune Miku",
+                    "zh_cn": "初音 未来",
+                    "jp": "初音 ミク"
+                },
+                "abbrev": {
+                    "en": "Hatsune Miku",
+                    "zh_cn": "初音未来",
+                    "jp": "初音ミク"
+                }
+            },
+            "variant": {},
+            "school": "etc",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/20007.webp"
+        },
+        "hibiki": {
+            "displayName": {
+                "full": {
+                    "en": "Nekozuka Hibiki",
+                    "zh_cn": "猫冢 响",
+                    "jp": "猫塚 ヒビキ"
+                },
+                "abbrev": {
+                    "en": "Hibiki",
+                    "zh_cn": "响",
+                    "jp": "ヒビキ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "mt",
+            "avatarUrl": "https://schale.gg/images/student/collection/20000.webp"
+        },
+        "hifumi": {
+            "displayName": {
+                "full": {
+                    "en": "Ajitani Hifumi",
+                    "zh_cn": "阿慈谷 日富美",
+                    "jp": "阿慈谷 ヒフミ"
+                },
+                "abbrev": {
+                    "en": "Hifumi",
+                    "zh_cn": "日富美",
+                    "jp": "ヒフミ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10003.webp"
+        },
+        "hifumi_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Ajitani Hifumi",
+                    "zh_cn": "阿慈谷 日富美",
+                    "jp": "阿慈谷 ヒフミ"
+                },
+                "abbrev": {
+                    "en": "Hifumi",
+                    "zh_cn": "日富美",
+                    "jp": "ヒフミ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "t.s.",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20005.webp"
+        },
+        "hibiki_cheerleader": {
+            "displayName": {
+                "full": {
+                    "en": "Nekozuka Hibiki",
+                    "zh_cn": "猫冢 响",
+                    "jp": "猫塚 ヒビキ"
+                },
+                "abbrev": {
+                    "en": "Hibiki",
+                    "zh_cn": "响",
+                    "jp": "ヒビキ"
+                }
+            },
+            "variant": {
+                "en": "Cheer Squad",
+                "zh_cn": "应援团",
+                "jp": "応援団"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "mt",
+            "avatarUrl": "https://schale.gg/images/student/collection/16010.webp"
+        },
+        "hina_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Sorasaki Hina",
+                    "zh_cn": "空崎 日奈",
+                    "jp": "空崎 ヒナ"
+                },
+                "abbrev": {
+                    "en": "Hina",
+                    "zh_cn": "日奈",
+                    "jp": "ヒナ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10022.webp"
+        },
+        "hina_dress": {
+            "displayName": {
+                "full": {
+                    "en": "Sorasaki Hina",
+                    "zh_cn": "空崎 日奈",
+                    "jp": "空崎 ヒナ"
+                },
+                "abbrev": {
+                    "en": "Hina",
+                    "zh_cn": "日奈",
+                    "jp": "ヒナ"
+                }
+            },
+            "variant": {
+                "en": "Dress",
+                "zh_cn": "礼服",
+                "jp": "ドレス"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "elastic",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10086.webp"
+        },
+        "himari": {
+            "displayName": {
+                "full": {
+                    "en": "Akeboshi Himari",
+                    "zh_cn": "明星 日鞠",
+                    "jp": "明星 ヒマリ"
+                },
+                "abbrev": {
+                    "en": "Himari",
+                    "zh_cn": "日鞠",
+                    "jp": "ヒマリ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20020.webp"
+        },
+        "hina": {
+            "displayName": {
+                "full": {
+                    "en": "Sorasaki Hina",
+                    "zh_cn": "空崎 日奈",
+                    "jp": "空崎 ヒナ"
+                },
+                "abbrev": {
+                    "en": "Hina",
+                    "zh_cn": "日奈",
+                    "jp": "ヒナ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10004.webp"
+        },
+        "hinata": {
+            "displayName": {
+                "full": {
+                    "en": "Wakaba Hinata",
+                    "zh_cn": "若叶 日向",
+                    "jp": "若葉 ヒナタ"
+                },
+                "abbrev": {
+                    "en": "Hinata",
+                    "zh_cn": "日向",
+                    "jp": "ヒナタ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10036.webp"
+        },
+        "hinata_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Wakaba Hinata",
+                    "zh_cn": "若叶 日向",
+                    "jp": "若葉 ヒナタ"
+                },
+                "abbrev": {
+                    "en": "Hinata",
+                    "zh_cn": "日向",
+                    "jp": "ヒナタ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20028.webp"
+        },
+        "hiyori": {
+            "displayName": {
+                "full": {
+                    "en": "Tsuchinaga Hiyori",
+                    "zh_cn": "槌永 日和",
+                    "jp": "槌永 ヒヨリ"
+                },
+                "abbrev": {
+                    "en": "Hiyori",
+                    "zh_cn": "日和",
+                    "jp": "ヒヨリ"
+                }
+            },
+            "variant": {},
+            "school": "arius",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20017.webp"
+        },
+        "hoshino": {
+            "displayName": {
+                "full": {
+                    "en": "Takanashi Hoshino",
+                    "zh_cn": "小鸟游 星野",
+                    "jp": "小鳥遊 ホシノ"
+                },
+                "abbrev": {
+                    "en": "Hoshino",
+                    "zh_cn": "星野",
+                    "jp": "ホシノ"
+                }
+            },
+            "variant": {},
+            "school": "abydos",
+            "role": "tank",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10005.webp"
+        },
+        "hoshino_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Takanashi Hoshino",
+                    "zh_cn": "小鸟游 星野",
+                    "jp": "小鳥遊 ホシノ"
+                },
+                "abbrev": {
+                    "en": "Hoshino",
+                    "zh_cn": "星野",
+                    "jp": "ホシノ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "abydos",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10045.webp"
+        },
+        "iori": {
+            "displayName": {
+                "full": {
+                    "en": "Shiromi Iori",
+                    "zh_cn": "银镜 伊织",
+                    "jp": "銀鏡 イオリ"
+                },
+                "abbrev": {
+                    "en": "Iori",
+                    "zh_cn": "伊织",
+                    "jp": "イオリ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10006.webp"
+        },
+        "iori_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Shiromi Iori",
+                    "zh_cn": "银镜 伊织",
+                    "jp": "銀鏡 イオリ"
+                },
+                "abbrev": {
+                    "en": "Iori",
+                    "zh_cn": "伊织",
+                    "jp": "イオリ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10023.webp"
+        },
+        "ibuki": {
+            "displayName": {
+                "full": {
+                    "en": "Tanga Ibuki",
+                    "zh_cn": "丹花 伊吹",
+                    "jp": "丹花 イブキ"
+                },
+                "abbrev": {
+                    "en": "Ibuki",
+                    "zh_cn": "伊吹",
+                    "jp": "イブキ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/16014.webp"
+        },
+        "iroha": {
+            "displayName": {
+                "full": {
+                    "en": "Natsume Iroha",
+                    "zh_cn": "枣 伊吕波",
+                    "jp": "棗 イロハ"
+                },
+                "abbrev": {
+                    "en": "Iroha",
+                    "zh_cn": "伊吕波",
+                    "jp": "イロハ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "t.s.",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20016.webp"
+        },
+        "ichika": {
+            "displayName": {
+                "full": {
+                    "en": "Nakamasa Ichika",
+                    "zh_cn": "仲正 一花",
+                    "jp": "仲正 イチカ"
+                },
+                "abbrev": {
+                    "en": "Ichika",
+                    "zh_cn": "一花",
+                    "jp": "イチカ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10077.webp"
+        },
+        "izumi": {
+            "displayName": {
+                "full": {
+                    "en": "Shishidou Izumi",
+                    "zh_cn": "狮子堂 泉",
+                    "jp": "獅子堂 イズミ"
+                },
+                "abbrev": {
+                    "en": "Izumi",
+                    "zh_cn": "泉",
+                    "jp": "イズミ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10009.webp"
+        },
+        "izuna_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kuda Izuna",
+                    "zh_cn": "久田 泉奈",
+                    "jp": "久田 イズナ"
+                },
+                "abbrev": {
+                    "en": "Izuna",
+                    "zh_cn": "泉奈",
+                    "jp": "イズナ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10046.webp"
+        },
+        "junko": {
+            "displayName": {
+                "full": {
+                    "en": "Akashi Junko",
+                    "zh_cn": "赤司 纯子",
+                    "jp": "赤司 ジュンコ"
+                },
+                "abbrev": {
+                    "en": "Junko",
+                    "zh_cn": "纯子",
+                    "jp": "ジュンコ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/13007.webp"
+        },
+        "junko_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Akashi Junko",
+                    "zh_cn": "赤司 纯子",
+                    "jp": "赤司 ジュンコ"
+                },
+                "abbrev": {
+                    "en": "Junko",
+                    "zh_cn": "纯子",
+                    "jp": "ジュンコ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/16012.webp"
+        },
+        "izuna": {
+            "displayName": {
+                "full": {
+                    "en": "Kuda Izuna",
+                    "zh_cn": "久田 泉奈",
+                    "jp": "久田 イズナ"
+                },
+                "abbrev": {
+                    "en": "Izuna",
+                    "zh_cn": "泉奈",
+                    "jp": "イズナ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10014.webp"
+        },
+        "izumi_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Shishidou Izumi",
+                    "zh_cn": "狮子堂 泉",
+                    "jp": "獅子堂 イズミ"
+                },
+                "abbrev": {
+                    "en": "Izumi",
+                    "zh_cn": "泉",
+                    "jp": "イズミ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16006.webp"
+        },
+        "kaede": {
+            "displayName": {
+                "full": {
+                    "en": "Isami Kaede",
+                    "zh_cn": "勇美 枫",
+                    "jp": "勇美 カエデ"
+                },
+                "abbrev": {
+                    "en": "Kaede",
+                    "zh_cn": "枫",
+                    "jp": "カエデ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20015.webp"
+        },
+        "juri": {
+            "displayName": {
+                "full": {
+                    "en": "Ushimaki Juri",
+                    "zh_cn": "牛牧 朱莉",
+                    "jp": "牛牧 ジュリ"
+                },
+                "abbrev": {
+                    "en": "Juri",
+                    "zh_cn": "朱莉",
+                    "jp": "ジュリ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26002.webp"
+        },
+        "kaho": {
+            "displayName": {
+                "full": {
+                    "en": "Kuwakami Kaho",
+                    "zh_cn": "桑上 果穗",
+                    "jp": "桑上 カホ"
+                },
+                "abbrev": {
+                    "en": "Kaho",
+                    "zh_cn": "果穗",
+                    "jp": "カホ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10065.webp"
+        },
+        "kanna": {
+            "displayName": {
+                "full": {
+                    "en": "Ogata Kanna",
+                    "zh_cn": "尾刃 叶渚",
+                    "jp": "尾刃 カンナ"
+                },
+                "abbrev": {
+                    "en": "Kanna",
+                    "zh_cn": "叶渚",
+                    "jp": "カンナ"
+                }
+            },
+            "variant": {},
+            "school": "valkyrie",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20023.webp"
+        },
+        "karin": {
+            "displayName": {
+                "full": {
+                    "en": "Kakudate Karin",
+                    "zh_cn": "角楯 花凛",
+                    "jp": "角楯 カリン"
+                },
+                "abbrev": {
+                    "en": "Karin",
+                    "zh_cn": "花凛",
+                    "jp": "カリン"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20001.webp"
+        },
+        "karin_bunny": {
+            "displayName": {
+                "full": {
+                    "en": "Kakudate Karin",
+                    "zh_cn": "角楯 花凛",
+                    "jp": "角楯 カリン"
+                },
+                "abbrev": {
+                    "en": "Karin",
+                    "zh_cn": "花凛",
+                    "jp": "カリン"
+                }
+            },
+            "variant": {
+                "en": "Bunny",
+                "zh_cn": "兔女郎",
+                "jp": "バニーガール"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10027.webp"
+        },
+        "kasumi": {
+            "displayName": {
+                "full": {
+                    "en": "Kinugawa Kasumi",
+                    "zh_cn": "鬼怒川 霞",
+                    "jp": "鬼怒川 カスミ"
+                },
+                "abbrev": {
+                    "en": "Kasumi",
+                    "zh_cn": "霞",
+                    "jp": "カスミ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10078.webp"
+        },
+        "kayoko": {
+            "displayName": {
+                "full": {
+                    "en": "Onikata Kayoko",
+                    "zh_cn": "鬼方 佳代子",
+                    "jp": "鬼方 カヨコ"
+                },
+                "abbrev": {
+                    "en": "Kayoko",
+                    "zh_cn": "佳代子",
+                    "jp": "カヨコ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13005.webp"
+        },
+        "kayoko_dress": {
+            "displayName": {
+                "full": {
+                    "en": "Onikata Kayoko",
+                    "zh_cn": "鬼方 佳代子",
+                    "jp": "鬼方 カヨコ"
+                },
+                "abbrev": {
+                    "en": "Kayoko",
+                    "zh_cn": "佳代子",
+                    "jp": "カヨコ"
+                }
+            },
+            "variant": {
+                "en": "Dress",
+                "zh_cn": "礼服",
+                "jp": "ドレス"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10088.webp"
+        },
+        "kayoko_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Onikata Kayoko",
+                    "zh_cn": "鬼方 佳代子",
+                    "jp": "鬼方 カヨコ"
+                },
+                "abbrev": {
+                    "en": "Kayoko",
+                    "zh_cn": "佳代子",
+                    "jp": "カヨコ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10064.webp"
+        },
+        "kazusa": {
+            "displayName": {
+                "full": {
+                    "en": "Kyoyama Kazusa",
+                    "zh_cn": "杏山 和纱",
+                    "jp": "杏山 カズサ"
+                },
+                "abbrev": {
+                    "en": "Kazusa",
+                    "zh_cn": "和纱",
+                    "jp": "カズサ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10049.webp"
+        },
+        "kikyou": {
+            "displayName": {
+                "full": {
+                    "en": "Kiryuu Kikyou",
+                    "zh_cn": "桐生 桔梗",
+                    "jp": "桐生 キキョウ"
+                },
+                "abbrev": {
+                    "en": "Kikyou",
+                    "zh_cn": "桔梗",
+                    "jp": "キキョウ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10083.webp"
+        },
+        "kirino": {
+            "displayName": {
+                "full": {
+                    "en": "Nakatsukasa Kirino",
+                    "zh_cn": "中务 桐乃",
+                    "jp": "中務 キリノ"
+                },
+                "abbrev": {
+                    "en": "Kirino",
+                    "zh_cn": "桐乃",
+                    "jp": "キリノ"
+                }
+            },
+            "variant": {},
+            "school": "valkyrie",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13012.webp"
+        },
+        "koharu": {
+            "displayName": {
+                "full": {
+                    "en": "Shimoe Koharu",
+                    "zh_cn": "下江 小春",
+                    "jp": "下江 コハル"
+                },
+                "abbrev": {
+                    "en": "Koharu",
+                    "zh_cn": "小春",
+                    "jp": "コハル"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10020.webp"
+        },
+        "koharu_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Shimoe Koharu",
+                    "zh_cn": "下江 小春",
+                    "jp": "下江 コハル"
+                },
+                "abbrev": {
+                    "en": "Koharu",
+                    "zh_cn": "小春",
+                    "jp": "コハル"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/16013.webp"
+        },
+        "kokona": {
+            "displayName": {
+                "full": {
+                    "en": "Sunohara Kokona",
+                    "zh_cn": "春原 心奈",
+                    "jp": "春原 ココナ"
+                },
+                "abbrev": {
+                    "en": "Kokona",
+                    "zh_cn": "心奈",
+                    "jp": "ココナ"
+                }
+            },
+            "variant": {},
+            "school": "shanhaijing",
+            "role": "healer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10050.webp"
+        },
+        "kotama": {
+            "displayName": {
+                "full": {
+                    "en": "Otose Kotama",
+                    "zh_cn": "音濑 小玉",
+                    "jp": "音瀬 コタマ"
+                },
+                "abbrev": {
+                    "en": "Kotama",
+                    "zh_cn": "小玉",
+                    "jp": "コタマ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26001.webp"
+        },
+        "kotama_camping": {
+            "displayName": {
+                "full": {
+                    "en": "Otose Kotama",
+                    "zh_cn": "音濑 小玉",
+                    "jp": "音瀬 コタマ"
+                },
+                "abbrev": {
+                    "en": "Kotama",
+                    "zh_cn": "小玉",
+                    "jp": "コタマ"
+                }
+            },
+            "variant": {
+                "en": "Camping",
+                "zh_cn": "露营",
+                "jp": "キャンプ"
+            },
+            "school": "millennium",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10084.webp"
+        },
+        "kotori": {
+            "displayName": {
+                "full": {
+                    "en": "Toyomi Kotori",
+                    "zh_cn": "丰见 琴里",
+                    "jp": "豊見 コトリ"
+                },
+                "abbrev": {
+                    "en": "Kotori",
+                    "zh_cn": "琴里",
+                    "jp": "コトリ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16002.webp"
+        },
+        "kotori_cheerleader": {
+            "displayName": {
+                "full": {
+                    "en": "Toyomi Kotori",
+                    "zh_cn": "丰见 琴里",
+                    "jp": "豊見  コトリ"
+                },
+                "abbrev": {
+                    "en": "Kotori",
+                    "zh_cn": "琴里",
+                    "jp": "コトリ"
+                }
+            },
+            "variant": {
+                "en": "Cheer Squad",
+                "zh_cn": "应援团",
+                "jp": "応援団"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10076.webp"
+        },
+        "koyuki": {
+            "displayName": {
+                "full": {
+                    "en": "Kurosaki Koyuki",
+                    "zh_cn": "黑崎 小雪",
+                    "jp": "黒崎 コユキ"
+                },
+                "abbrev": {
+                    "en": "Koyuki",
+                    "zh_cn": "小雪",
+                    "jp": "コユキ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10063.webp"
+        },
+        "maki": {
+            "displayName": {
+                "full": {
+                    "en": "Konuri Maki",
+                    "zh_cn": "小涂 真纪",
+                    "jp": "小塗 マキ"
+                },
+                "abbrev": {
+                    "en": "Maki",
+                    "zh_cn": "真纪",
+                    "jp": "マキ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10007.webp"
+        },
+        "mari_track": {
+            "displayName": {
+                "full": {
+                    "en": "Iochi Mari",
+                    "zh_cn": "伊落 玛丽",
+                    "jp": "伊落 マリー"
+                },
+                "abbrev": {
+                    "en": "Mari",
+                    "zh_cn": "玛丽",
+                    "jp": "マリー"
+                }
+            },
+            "variant": {
+                "en": "Track",
+                "zh_cn": "运动服",
+                "jp": "体操服"
+            },
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10054.webp"
+        },
+        "makoto": {
+            "displayName": {
+                "full": {
+                    "en": "Hanuma Makoto",
+                    "zh_cn": "羽沼 真琴",
+                    "jp": "羽沼 マコト"
+                },
+                "abbrev": {
+                    "en": "Makoto",
+                    "zh_cn": "真琴",
+                    "jp": "マコト"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20033.webp"
+        },
+        "mari": {
+            "displayName": {
+                "full": {
+                    "en": "Iochi Mari",
+                    "zh_cn": "伊落 玛丽",
+                    "jp": "伊落 マリー"
+                },
+                "abbrev": {
+                    "en": "Mari",
+                    "zh_cn": "玛丽",
+                    "jp": "マリー"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23008.webp"
+        },
+        "marina": {
+            "displayName": {
+                "full": {
+                    "en": "Ikekura Marina",
+                    "zh_cn": "池仓 真里奈",
+                    "jp": "池倉 マリナ"
+                },
+                "abbrev": {
+                    "en": "Marina",
+                    "zh_cn": "真里奈",
+                    "jp": "マリナ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "tank",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10037.webp"
+        },
+        "mashiro": {
+            "displayName": {
+                "full": {
+                    "en": "Shizuyama Mashiro",
+                    "zh_cn": "静山 真白",
+                    "jp": "静山 マシロ"
+                },
+                "abbrev": {
+                    "en": "Mashiro",
+                    "zh_cn": "真白",
+                    "jp": "マシロ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20003.webp"
+        },
+        "mashiro_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Shizuyama Mashiro",
+                    "zh_cn": "静山 真白",
+                    "jp": "静山 マシロ"
+                },
+                "abbrev": {
+                    "en": "Mashiro",
+                    "zh_cn": "真白",
+                    "jp": "マシロ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/20004.webp"
+        },
+        "megu": {
+            "displayName": {
+                "full": {
+                    "en": "Shimokura Megu",
+                    "zh_cn": "下仓 惠久",
+                    "jp": "下倉 メグ"
+                },
+                "abbrev": {
+                    "en": "Megu",
+                    "zh_cn": "惠久",
+                    "jp": "メグ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "ft",
+            "avatarUrl": "https://schale.gg/images/student/collection/10060.webp"
+        },
+        "meru": {
+            "displayName": {
+                "full": {
+                    "en": "Himeki Meru",
+                    "zh_cn": "姬木 芽留",
+                    "jp": "姫木 メル"
+                },
+                "abbrev": {
+                    "en": "Meru",
+                    "zh_cn": "芽留",
+                    "jp": "メル"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10075.webp"
+        },
+        "michiru": {
+            "displayName": {
+                "full": {
+                    "en": "Chidori Michiru",
+                    "zh_cn": "千鸟 满",
+                    "jp": "千鳥 ミチル"
+                },
+                "abbrev": {
+                    "en": "Michiru",
+                    "zh_cn": "满",
+                    "jp": "ミチル"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16009.webp"
+        },
+        "midori": {
+            "displayName": {
+                "full": {
+                    "en": "Saiba Midori",
+                    "zh_cn": "才羽 绿",
+                    "jp": "才羽 ミドリ"
+                },
+                "abbrev": {
+                    "en": "Midori",
+                    "zh_cn": "绿",
+                    "jp": "ミドリ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10016.webp"
+        },
+        "mika": {
+            "displayName": {
+                "full": {
+                    "en": "Misono Mika",
+                    "zh_cn": "圣园 未花",
+                    "jp": "聖園 ミカ"
+                },
+                "abbrev": {
+                    "en": "Mika",
+                    "zh_cn": "未花",
+                    "jp": "ミカ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10059.webp"
+        },
+        "mimori": {
+            "displayName": {
+                "full": {
+                    "en": "Mizuha Mimori",
+                    "zh_cn": "水羽 三森",
+                    "jp": "水羽 ミモリ"
+                },
+                "abbrev": {
+                    "en": "Mimori",
+                    "zh_cn": "三森",
+                    "jp": "ミモリ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10034.webp"
+        },
+        "mimori_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Mizuha Mimori",
+                    "zh_cn": "水羽 三森",
+                    "jp": "水羽 ミモリ"
+                },
+                "abbrev": {
+                    "en": "Mimori",
+                    "zh_cn": "三森",
+                    "jp": "ミモリ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20029.webp"
+        },
+        "mina": {
+            "displayName": {
+                "full": {
+                    "en": "Konoe Mina",
+                    "zh_cn": "近卫 弥奈",
+                    "jp": "近衛 ミナ"
+                },
+                "abbrev": {
+                    "en": "Mina",
+                    "zh_cn": "弥奈",
+                    "jp": "ミナ"
+                }
+            },
+            "variant": {},
+            "school": "shanhaijing",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10070.webp"
+        },
+        "minori": {
+            "displayName": {
+                "full": {
+                    "en": "Yasumori Minori",
+                    "zh_cn": "安守 实里",
+                    "jp": "安守 ミノリ"
+                },
+                "abbrev": {
+                    "en": "Minori",
+                    "zh_cn": "实里",
+                    "jp": "ミノリ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20026.webp"
+        },
+        "mine": {
+            "displayName": {
+                "full": {
+                    "en": "Aomori Mine",
+                    "zh_cn": "苍森 峰",
+                    "jp": "蒼森 ミネ"
+                },
+                "abbrev": {
+                    "en": "Mine",
+                    "zh_cn": "峰",
+                    "jp": "ミネ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10058.webp"
+        },
+        "misaka_mikoto": {
+            "displayName": {
+                "full": {
+                    "en": "Misaka Mikoto",
+                    "zh_cn": "御坂 美琴",
+                    "jp": "御坂  美琴"
+                },
+                "abbrev": {
+                    "en": "Misaka Mikoto",
+                    "zh_cn": "御坂美琴",
+                    "jp": "御坂美琴"
+                }
+            },
+            "variant": {},
+            "school": "tokiwadai",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10079.webp"
+        },
+        "miyako_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Tsukiyuki Miyako",
+                    "zh_cn": "月雪 宫子",
+                    "jp": "月雪 ミヤコ"
+                },
+                "abbrev": {
+                    "en": "Miyako",
+                    "zh_cn": "宫子",
+                    "jp": "ミヤコ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "srt",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10071.webp"
+        },
+        "misaki": {
+            "displayName": {
+                "full": {
+                    "en": "Imashino Misaki",
+                    "zh_cn": "戒野 美咲",
+                    "jp": "戒野 ミサキ"
+                },
+                "abbrev": {
+                    "en": "Misaki",
+                    "zh_cn": "美咲",
+                    "jp": "ミサキ"
+                }
+            },
+            "variant": {},
+            "school": "arius",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "rl",
+            "avatarUrl": "https://schale.gg/images/student/collection/10041.webp"
+        },
+        "miyako": {
+            "displayName": {
+                "full": {
+                    "en": "Tsukiyuki Miyako",
+                    "zh_cn": "月雪 宫子",
+                    "jp": "月雪 ミヤコ"
+                },
+                "abbrev": {
+                    "en": "Miyako",
+                    "zh_cn": "宫子",
+                    "jp": "ミヤコ"
+                }
+            },
+            "variant": {},
+            "school": "srt",
+            "role": "tank",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10038.webp"
+        },
+        "miyu": {
+            "displayName": {
+                "full": {
+                    "en": "Kasumizawa Miyu",
+                    "zh_cn": "霞泽 美游",
+                    "jp": "霞沢 ミユ"
+                },
+                "abbrev": {
+                    "en": "Miyu",
+                    "zh_cn": "美游",
+                    "jp": "ミユ"
+                }
+            },
+            "variant": {},
+            "school": "srt",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10039.webp"
+        },
+        "miyu_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kasumizawa Miyu",
+                    "zh_cn": "霞泽 美游",
+                    "jp": "霞沢 ミユ"
+                },
+                "abbrev": {
+                    "en": "Miyu",
+                    "zh_cn": "美游",
+                    "jp": "ミユ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "srt",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/26010.webp"
+        },
+        "moe": {
+            "displayName": {
+                "full": {
+                    "en": "Kazekura Moe",
+                    "zh_cn": "风仓 萌绘",
+                    "jp": "風倉 モエ"
+                },
+                "abbrev": {
+                    "en": "Moe",
+                    "zh_cn": "萌绘",
+                    "jp": "モエ"
+                }
+            },
+            "variant": {},
+            "school": "srt",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20018.webp"
+        },
+        "momiji": {
+            "displayName": {
+                "full": {
+                    "en": "Akiizumi Momiji",
+                    "zh_cn": "秋泉 红叶",
+                    "jp": "秋泉 モミジ"
+                },
+                "abbrev": {
+                    "en": "Momiji",
+                    "zh_cn": "红叶",
+                    "jp": "モミジ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "rl",
+            "avatarUrl": "https://schale.gg/images/student/collection/13013.webp"
+        },
+        "momoi": {
+            "displayName": {
+                "full": {
+                    "en": "Saiba Momoi",
+                    "zh_cn": "才羽 桃",
+                    "jp": "才羽 モモイ"
+                },
+                "abbrev": {
+                    "en": "Momoi",
+                    "zh_cn": "桃",
+                    "jp": "モモイ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/13011.webp"
+        },
+        "mutsuki": {
+            "displayName": {
+                "full": {
+                    "en": "Asagi Mutsuki",
+                    "zh_cn": "浅黄 睦月",
+                    "jp": "浅黄 ムツキ"
+                },
+                "abbrev": {
+                    "en": "Mutsuki",
+                    "zh_cn": "睦月",
+                    "jp": "ムツキ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13006.webp"
+        },
+        "mutsuki_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Asagi Mutsuki",
+                    "zh_cn": "浅黄 睦月",
+                    "jp": "浅黄 ムツキ"
+                },
+                "abbrev": {
+                    "en": "Mutsuki",
+                    "zh_cn": "睦月",
+                    "jp": "ムツキ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "gehenna",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10032.webp"
+        },
+        "natsu": {
+            "displayName": {
+                "full": {
+                    "en": "Yutori Natsu",
+                    "zh_cn": "柚鸟 夏",
+                    "jp": "柚鳥 ナツ"
+                },
+                "abbrev": {
+                    "en": "Natsu",
+                    "zh_cn": "夏",
+                    "jp": "ナツ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "tank",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10029.webp"
+        },
+        "nagisa": {
+            "displayName": {
+                "full": {
+                    "en": "Kirifuji Nagisa",
+                    "zh_cn": "桐藤 渚",
+                    "jp": "桐藤 ナギサ"
+                },
+                "abbrev": {
+                    "en": "Nagisa",
+                    "zh_cn": "渚",
+                    "jp": "ナギサ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20024.webp"
+        },
+        "neru": {
+            "displayName": {
+                "full": {
+                    "en": "Mikamo Neru",
+                    "zh_cn": "美甘 妮露",
+                    "jp": "美甘 ネル"
+                },
+                "abbrev": {
+                    "en": "Neru",
+                    "zh_cn": "妮露",
+                    "jp": "ネル"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10008.webp"
+        },
+        "neru_bunny": {
+            "displayName": {
+                "full": {
+                    "en": "Mikamo Neru",
+                    "zh_cn": "美甘 妮露",
+                    "jp": "美甘 ネル"
+                },
+                "abbrev": {
+                    "en": "Neru",
+                    "zh_cn": "妮露",
+                    "jp": "ネル"
+                }
+            },
+            "variant": {
+                "en": "Bunny",
+                "zh_cn": "兔女郎",
+                "jp": "バニーガール"
+            },
+            "school": "millennium",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10026.webp"
+        },
+        "noa": {
+            "displayName": {
+                "full": {
+                    "en": "Ushio Noa",
+                    "zh_cn": "生盐 诺亚",
+                    "jp": "生塩 ノア"
+                },
+                "abbrev": {
+                    "en": "Noa",
+                    "zh_cn": "诺亚",
+                    "jp": "ノア"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10052.webp"
+        },
+        "nodoka_hotspring": {
+            "displayName": {
+                "full": {
+                    "en": "Amami Nodoka",
+                    "zh_cn": "天见 和香",
+                    "jp": "天見 ノドカ"
+                },
+                "abbrev": {
+                    "en": "Nodoka",
+                    "zh_cn": "和香",
+                    "jp": "ノドカ"
+                }
+            },
+            "variant": {
+                "en": "Hot Spring",
+                "zh_cn": "温泉",
+                "jp": "温泉"
+            },
+            "school": "redwinter",
+            "role": "healer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20010.webp"
+        },
+        "nodoka": {
+            "displayName": {
+                "full": {
+                    "en": "Amami Nodoka",
+                    "zh_cn": "天见 和香",
+                    "jp": "天見 ノドカ"
+                },
+                "abbrev": {
+                    "en": "Nodoka",
+                    "zh_cn": "和香",
+                    "jp": "ノドカ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26006.webp"
+        },
+        "nonomi_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Izayoi Nonomi",
+                    "zh_cn": "十六夜 野宫",
+                    "jp": "十六夜 ノノミ"
+                },
+                "abbrev": {
+                    "en": "Nonomi",
+                    "zh_cn": "野宫",
+                    "jp": "ノノミ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10044.webp"
+        },
+        "nonomi": {
+            "displayName": {
+                "full": {
+                    "en": "Izayoi Nonomi",
+                    "zh_cn": "十六夜 野宫",
+                    "jp": "十六夜 ノノミ"
+                },
+                "abbrev": {
+                    "en": "Nonomi",
+                    "zh_cn": "野宫",
+                    "jp": "ノノミ"
+                }
+            },
+            "variant": {},
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13004.webp"
+        },
+        "pina": {
+            "displayName": {
+                "full": {
+                    "en": "Asahina Pina",
+                    "zh_cn": "朝比奈 菲娜",
+                    "jp": "朝比奈 フィーナ"
+                },
+                "abbrev": {
+                    "en": "Pina",
+                    "zh_cn": "菲娜",
+                    "jp": "フィーナ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "light",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16004.webp"
+        },
+        "reisa": {
+            "displayName": {
+                "full": {
+                    "en": "Uzawa Reisa",
+                    "zh_cn": "宇泽 玲纱",
+                    "jp": "宇沢 レイサ"
+                },
+                "abbrev": {
+                    "en": "Reisa",
+                    "zh_cn": "玲纱",
+                    "jp": "レイサ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "tank",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10068.webp"
+        },
+        "rumi": {
+            "displayName": {
+                "full": {
+                    "en": "Akeshiro Rumi",
+                    "zh_cn": "朱城 流美",
+                    "jp": "朱城 ルミ"
+                },
+                "abbrev": {
+                    "en": "Rumi",
+                    "zh_cn": "流美",
+                    "jp": "ルミ"
+                }
+            },
+            "variant": {},
+            "school": "shanhaijing",
+            "role": "healer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10069.webp"
+        },
+        "renge": {
+            "displayName": {
+                "full": {
+                    "en": "Fuwa Renge",
+                    "zh_cn": "不破 莲华",
+                    "jp": "不破 レンゲ"
+                },
+                "abbrev": {
+                    "en": "Renge",
+                    "zh_cn": "莲华",
+                    "jp": "レンゲ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10082.webp"
+        },
+        "saori": {
+            "displayName": {
+                "full": {
+                    "en": "Joumae Saori",
+                    "zh_cn": "锭前 纱织",
+                    "jp": "錠前 サオリ"
+                },
+                "abbrev": {
+                    "en": "Saori",
+                    "zh_cn": "纱织",
+                    "jp": "サオリ"
+                }
+            },
+            "variant": {},
+            "school": "arius",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10048.webp"
+        },
+        "saten_ruiko": {
+            "displayName": {
+                "full": {
+                    "en": "Saten Ruiko",
+                    "zh_cn": "佐天 泪子",
+                    "jp": "佐天 涙子"
+                },
+                "abbrev": {
+                    "en": "Saten Ruiko",
+                    "zh_cn": "佐天泪子",
+                    "jp": "佐天涙子"
+                }
+            },
+            "variant": {},
+            "school": "etc",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26011.webp"
+        },
+        "saki": {
+            "displayName": {
+                "full": {
+                    "en": "Sorai Saki",
+                    "zh_cn": "空井 咲",
+                    "jp": "空井 サキ"
+                },
+                "abbrev": {
+                    "en": "Saki",
+                    "zh_cn": "咲",
+                    "jp": "サキ"
+                }
+            },
+            "variant": {},
+            "school": "srt",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20014.webp"
+        },
+        "saki_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Sorai Saki",
+                    "zh_cn": "空井 咲",
+                    "jp": "空井 サキ"
+                },
+                "abbrev": {
+                    "en": "Saki",
+                    "zh_cn": "咲",
+                    "jp": "サキ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "srt",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "mg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10072.webp"
+        },
+        "sakurako": {
+            "displayName": {
+                "full": {
+                    "en": "Utazumi Sakurako",
+                    "zh_cn": "歌住 樱子",
+                    "jp": "歌住 サクラコ"
+                },
+                "abbrev": {
+                    "en": "Sakurako",
+                    "zh_cn": "樱子",
+                    "jp": "サクラコ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10061.webp"
+        },
+        "saya": {
+            "displayName": {
+                "full": {
+                    "en": "Yakushi Saya",
+                    "zh_cn": "药子 纱绫",
+                    "jp": "薬子 サヤ"
+                },
+                "abbrev": {
+                    "en": "Saya",
+                    "zh_cn": "纱绫",
+                    "jp": "サヤ"
+                }
+            },
+            "variant": {},
+            "school": "shanhaijing",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20002.webp"
+        },
+        "saya_casual": {
+            "displayName": {
+                "full": {
+                    "en": "Yakushi Saya",
+                    "zh_cn": "药子 纱绫",
+                    "jp": "薬子 サヤ"
+                },
+                "abbrev": {
+                    "en": "Saya",
+                    "zh_cn": "纱绫",
+                    "jp": "サヤ"
+                }
+            },
+            "variant": {
+                "en": "Casual",
+                "zh_cn": "便服",
+                "jp": "私服"
+            },
+            "school": "shanhaijing",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20006.webp"
+        },
+        "sena": {
+            "displayName": {
+                "full": {
+                    "en": "Himuro Sena",
+                    "zh_cn": "冰室 濑名",
+                    "jp": "氷室 セナ"
+                },
+                "abbrev": {
+                    "en": "Sena",
+                    "zh_cn": "濑名",
+                    "jp": "セナ"
+                }
+            },
+            "variant": {},
+            "school": "gehenna",
+            "role": "t.s.",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/20012.webp"
+        },
+        "serika_newyear": {
+            "displayName": {
+                "full": {
+                    "en": "Kuromi Serika",
+                    "zh_cn": "黑见 芹香",
+                    "jp": "黒見 セリカ"
+                },
+                "abbrev": {
+                    "en": "Serika",
+                    "zh_cn": "芹香",
+                    "jp": "セリカ"
+                }
+            },
+            "variant": {
+                "en": "New Year",
+                "zh_cn": "正月",
+                "jp": "正月"
+            },
+            "school": "abydos",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20011.webp"
+        },
+        "serika": {
+            "displayName": {
+                "full": {
+                    "en": "Kuromi Serika",
+                    "zh_cn": "黑见 芹香",
+                    "jp": "黒見 セリカ"
+                },
+                "abbrev": {
+                    "en": "Serika",
+                    "zh_cn": "芹香",
+                    "jp": "セリカ"
+                }
+            },
+            "variant": {},
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/13008.webp"
+        },
+        "serina": {
+            "displayName": {
+                "full": {
+                    "en": "Sumi Serina",
+                    "zh_cn": "鹫见 芹娜",
+                    "jp": "鷲見 セリナ"
+                },
+                "abbrev": {
+                    "en": "Serina",
+                    "zh_cn": "芹娜",
+                    "jp": "セリナ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "healer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/26003.webp"
+        },
+        "shigure_hotspring": {
+            "displayName": {
+                "full": {
+                    "en": "Mayoi Shigure",
+                    "zh_cn": "间宵 时雨",
+                    "jp": "間宵 シグレ"
+                },
+                "abbrev": {
+                    "en": "Shigure",
+                    "zh_cn": "时雨",
+                    "jp": "シグレ"
+                }
+            },
+            "variant": {
+                "en": "Hot Spring",
+                "zh_cn": "温泉",
+                "jp": "温泉"
+            },
+            "school": "redwinter",
+            "role": "healer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/20031.webp"
+        },
+        "shimiko": {
+            "displayName": {
+                "full": {
+                    "en": "Endou Shimiko",
+                    "zh_cn": "圆堂 志美子",
+                    "jp": "円堂 シミコ"
+                },
+                "abbrev": {
+                    "en": "Shimiko",
+                    "zh_cn": "志美子",
+                    "jp": "シミコ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/26004.webp"
+        },
+        "shiroko_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Sunaookami Shiroko",
+                    "zh_cn": "砂狼 白子",
+                    "jp": "砂狼 シロコ"
+                },
+                "abbrev": {
+                    "en": "Shiroko",
+                    "zh_cn": "白子",
+                    "jp": "シロコ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/20027.webp"
+        },
+        "shizuko_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kawawa Shizuko",
+                    "zh_cn": "河和 静子",
+                    "jp": "河和 シズコ"
+                },
+                "abbrev": {
+                    "en": "Shizuko",
+                    "zh_cn": "静子",
+                    "jp": "シズコ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/26008.webp"
+        },
+        "shun": {
+            "displayName": {
+                "full": {
+                    "en": "Sunohara Shun",
+                    "zh_cn": "春原 瞬",
+                    "jp": "春原 シュン"
+                },
+                "abbrev": {
+                    "en": "Shun",
+                    "zh_cn": "瞬",
+                    "jp": "シュン"
+                }
+            },
+            "variant": {},
+            "school": "shanhaijing",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10011.webp"
+        },
+        "sumire": {
+            "displayName": {
+                "full": {
+                    "en": "Otohana Sumire",
+                    "zh_cn": "乙花 堇",
+                    "jp": "乙花 スミレ"
+                },
+                "abbrev": {
+                    "en": "Sumire",
+                    "zh_cn": "堇",
+                    "jp": "スミレ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10012.webp"
+        },
+        "suzumi": {
+            "displayName": {
+                "full": {
+                    "en": "Morizuki Suzumi",
+                    "zh_cn": "守月 铃美",
+                    "jp": "守月 スズミ"
+                },
+                "abbrev": {
+                    "en": "Suzumi",
+                    "zh_cn": "铃美",
+                    "jp": "スズミ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/16003.webp"
+        },
+        "toki": {
+            "displayName": {
+                "full": {
+                    "en": "Asuma Toki",
+                    "zh_cn": "飞鸟马 时",
+                    "jp": "飛鳥馬 トキ"
+                },
+                "abbrev": {
+                    "en": "Toki",
+                    "zh_cn": "时",
+                    "jp": "トキ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "elastic",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10062.webp"
+        },
+        "tomoe": {
+            "displayName": {
+                "full": {
+                    "en": "Sashiro Tomoe",
+                    "zh_cn": "佐城 巴",
+                    "jp": "佐城 トモエ"
+                },
+                "abbrev": {
+                    "en": "Tomoe",
+                    "zh_cn": "巴",
+                    "jp": "トモエ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/16007.webp"
+        },
+        "tsubaki_guide": {
+            "displayName": {
+                "full": {
+                    "en": "Kasuga Tsubaki",
+                    "zh_cn": "春日 椿",
+                    "jp": "春日 ツバキ"
+                },
+                "abbrev": {
+                    "en": "Tsubaki",
+                    "zh_cn": "椿",
+                    "jp": "ツバキ"
+                }
+            },
+            "variant": {
+                "en": "Guide",
+                "zh_cn": "导游",
+                "jp": "ガイド"
+            },
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/20035.webp"
+        },
+        "tsubaki": {
+            "displayName": {
+                "full": {
+                    "en": "Kasuga Tsubaki",
+                    "zh_cn": "春日 椿",
+                    "jp": "春日 ツバキ"
+                },
+                "abbrev": {
+                    "en": "Tsubaki",
+                    "zh_cn": "椿",
+                    "jp": "ツバキ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "tank",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13009.webp"
+        },
+        "toki_bunny": {
+            "displayName": {
+                "full": {
+                    "en": "Asuma Toki",
+                    "zh_cn": "飞鸟马 时",
+                    "jp": "飛鳥馬 トキ"
+                },
+                "abbrev": {
+                    "en": "Toki",
+                    "zh_cn": "时",
+                    "jp": "トキ"
+                }
+            },
+            "variant": {
+                "en": "Bunny",
+                "zh_cn": "兔女郎",
+                "jp": "バニーガール"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10067.webp"
+        },
+        "tsukuyo": {
+            "displayName": {
+                "full": {
+                    "en": "Ono Tsukuyo",
+                    "zh_cn": "大野 月咏",
+                    "jp": "大野 ツクヨ"
+                },
+                "abbrev": {
+                    "en": "Tsukuyo",
+                    "zh_cn": "月咏",
+                    "jp": "ツクヨ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "tank",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10040.webp"
+        },
+        "tsurugi": {
+            "displayName": {
+                "full": {
+                    "en": "Kenzaki Tsurugi",
+                    "zh_cn": "剑先 鹤城",
+                    "jp": "剣先 ツルギ"
+                },
+                "abbrev": {
+                    "en": "Tsurugi",
+                    "zh_cn": "鹤城",
+                    "jp": "ツルギ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10013.webp"
+        },
+        "tsurugi_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kenzaki Tsurugi",
+                    "zh_cn": "剑先 鹤城",
+                    "jp": "剣先 ツルギ"
+                },
+                "abbrev": {
+                    "en": "Tsurugi",
+                    "zh_cn": "鹤城",
+                    "jp": "ツルギ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/16005.webp"
+        },
+        "ui": {
+            "displayName": {
+                "full": {
+                    "en": "Kozeki Ui",
+                    "zh_cn": "古关 忧",
+                    "jp": "古関 ウイ"
+                },
+                "abbrev": {
+                    "en": "Ui",
+                    "zh_cn": "忧",
+                    "jp": "ウイ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10035.webp"
+        },
+        "ui_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kozeki Ui",
+                    "zh_cn": "古关 忧",
+                    "jp": "古関 ウイ"
+                },
+                "abbrev": {
+                    "en": "Ui",
+                    "zh_cn": "忧",
+                    "jp": "ウイ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "trinity",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "elastic",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10073.webp"
+        },
+        "umika": {
+            "displayName": {
+                "full": {
+                    "en": "Satohama Umika",
+                    "zh_cn": "里浜 海香",
+                    "jp": "里浜 ウミカ"
+                },
+                "abbrev": {
+                    "en": "Umika",
+                    "zh_cn": "海香",
+                    "jp": "ウミカ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10090.webp"
+        },
+        "utaha": {
+            "displayName": {
+                "full": {
+                    "en": "Shiraishi Utaha",
+                    "zh_cn": "白石 歌原",
+                    "jp": "白石 ウタハ"
+                },
+                "abbrev": {
+                    "en": "Utaha",
+                    "zh_cn": "歌原",
+                    "jp": "ウタハ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23004.webp"
+        },
+        "utaha_cheerleader": {
+            "displayName": {
+                "full": {
+                    "en": "Shiraishi Utaha",
+                    "zh_cn": "白石 歌原",
+                    "jp": "白石 ウタハ"
+                },
+                "abbrev": {
+                    "en": "Utaha",
+                    "zh_cn": "歌原",
+                    "jp": "ウタハ"
+                }
+            },
+            "variant": {
+                "en": "Cheer Squad",
+                "zh_cn": "应援团",
+                "jp": "応援団"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10051.webp"
+        },
+        "wakamo": {
+            "displayName": {
+                "full": {
+                    "en": "Kosaka Wakamo",
+                    "zh_cn": "狐坂 若藻",
+                    "jp": "狐坂 ワカモ"
+                },
+                "abbrev": {
+                    "en": "Wakamo",
+                    "zh_cn": "若藻",
+                    "jp": "ワカモ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10033.webp"
+        },
+        "wakamo_swimsuit": {
+            "displayName": {
+                "full": {
+                    "en": "Kosaka Wakamo",
+                    "zh_cn": "狐坂 若藻",
+                    "jp": "狐坂 ワカモ"
+                },
+                "abbrev": {
+                    "en": "Wakamo",
+                    "zh_cn": "若藻",
+                    "jp": "ワカモ"
+                }
+            },
+            "variant": {
+                "en": "Swimsuit",
+                "zh_cn": "泳装",
+                "jp": "水着"
+            },
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10043.webp"
+        },
+        "yuzu": {
+            "displayName": {
+                "full": {
+                    "en": "Hanaoka Yuzu",
+                    "zh_cn": "花冈 柚子",
+                    "jp": "花岡 ユズ"
+                },
+                "abbrev": {
+                    "en": "Yuzu",
+                    "zh_cn": "柚子",
+                    "jp": "ユズ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/10018.webp"
+        },
+        "yuuka_track": {
+            "displayName": {
+                "full": {
+                    "en": "Hayase Yuuka",
+                    "zh_cn": "早濑 优香",
+                    "jp": "早瀬 ユウカ"
+                },
+                "abbrev": {
+                    "en": "Yuuka",
+                    "zh_cn": "优香",
+                    "jp": "ユウカ"
+                }
+            },
+            "variant": {
+                "en": "Track",
+                "zh_cn": "运动服",
+                "jp": "体操服"
+            },
+            "school": "millennium",
+            "role": "tank",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10053.webp"
+        },
+        "yoshimi": {
+            "displayName": {
+                "full": {
+                    "en": "Ibaragi Yoshimi",
+                    "zh_cn": "伊原木 好美",
+                    "jp": "伊原木 ヨシミ"
+                },
+                "abbrev": {
+                    "en": "Yoshimi",
+                    "zh_cn": "好美",
+                    "jp": "ヨシミ"
+                }
+            },
+            "variant": {},
+            "school": "trinity",
+            "role": "dealer",
+            "damageType": "piercing",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/26005.webp"
+        },
+        "yukari": {
+            "displayName": {
+                "full": {
+                    "en": "Kadenokouji Yukari",
+                    "zh_cn": "勘解由小路 紫草",
+                    "jp": "勘解由小路 ユカリ"
+                },
+                "abbrev": {
+                    "en": "Yukari",
+                    "zh_cn": "紫草",
+                    "jp": "ユカリ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "dealer",
+            "damageType": "sonic",
+            "armorType": "heavy",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10081.webp"
+        },
+        "yuuka": {
+            "displayName": {
+                "full": {
+                    "en": "Hayase Yuuka",
+                    "zh_cn": "早濑 优香",
+                    "jp": "早瀬 ユウカ"
+                },
+                "abbrev": {
+                    "en": "Yuuka",
+                    "zh_cn": "优香",
+                    "jp": "ユウカ"
+                }
+            },
+            "variant": {},
+            "school": "millennium",
+            "role": "tank",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "smg",
+            "avatarUrl": "https://schale.gg/images/student/collection/13010.webp"
+        },
+        "yuzu_maid": {
+            "displayName": {
+                "full": {
+                    "en": "Hanaoka Yuzu",
+                    "zh_cn": "花冈 柚子",
+                    "jp": "花岡 ユズ"
+                },
+                "abbrev": {
+                    "en": "Yuzu",
+                    "zh_cn": "柚子",
+                    "jp": "ユズ"
+                }
+            },
+            "variant": {
+                "en": "Maid",
+                "zh_cn": "女仆",
+                "jp": "メイド"
+            },
+            "school": "millennium",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "elastic",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/26009.webp"
+        },
+        "serina_christmas": {
+            "displayName": {
+                "full": {
+                    "en": "Sumi Serina",
+                    "zh_cn": "鹫见 芹娜",
+                    "jp": "鷲見 セリナ"
+                },
+                "abbrev": {
+                    "en": "Serina",
+                    "zh_cn": "芹娜",
+                    "jp": "セリナ"
+                }
+            },
+            "variant": {
+                "en": "Christmas",
+                "zh_cn": "圣诞节",
+                "jp": "クリスマス"
+            },
+            "school": "trinity",
+            "role": "support",
+            "damageType": "piercing",
+            "armorType": "special",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10056.webp"
+        },
+        "shiroko_cycling": {
+            "displayName": {
+                "full": {
+                    "en": "Sunaookami Shiroko",
+                    "zh_cn": "砂狼 白子",
+                    "jp": "砂狼 シロコ"
+                },
+                "abbrev": {
+                    "en": "Shiroko",
+                    "zh_cn": "白子",
+                    "jp": "シロコ"
+                }
+            },
+            "variant": {
+                "en": "Cycling",
+                "zh_cn": "骑行",
+                "jp": "ライディング"
+            },
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "mystic",
+            "armorType": "heavy",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10024.webp"
+        },
+        "shiroko": {
+            "displayName": {
+                "full": {
+                    "en": "Sunaookami Shiroko",
+                    "zh_cn": "砂狼 白子",
+                    "jp": "砂狼 シロコ"
+                },
+                "abbrev": {
+                    "en": "Shiroko",
+                    "zh_cn": "白子",
+                    "jp": "シロコ"
+                }
+            },
+            "variant": {},
+            "school": "abydos",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "ar",
+            "avatarUrl": "https://schale.gg/images/student/collection/10010.webp"
+        },
+        "shizuko": {
+            "displayName": {
+                "full": {
+                    "en": "Kawawa Shizuko",
+                    "zh_cn": "河和 静子",
+                    "jp": "河和 シズコ"
+                },
+                "abbrev": {
+                    "en": "Shizuko",
+                    "zh_cn": "静子",
+                    "jp": "シズコ"
+                }
+            },
+            "variant": {},
+            "school": "hyakkiyako",
+            "role": "support",
+            "damageType": "mystic",
+            "armorType": "special",
+            "weaponType": "sg",
+            "avatarUrl": "https://schale.gg/images/student/collection/23006.webp"
+        },
+        "shigure": {
+            "displayName": {
+                "full": {
+                    "en": "Mayoi Shigure",
+                    "zh_cn": "间宵 时雨",
+                    "jp": "間宵 シグレ"
+                },
+                "abbrev": {
+                    "en": "Shigure",
+                    "zh_cn": "时雨",
+                    "jp": "シグレ"
+                }
+            },
+            "variant": {},
+            "school": "redwinter",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "gl",
+            "avatarUrl": "https://schale.gg/images/student/collection/10055.webp"
+        },
+        "shokuhou_misaki": {
+            "displayName": {
+                "full": {
+                    "en": "Shokuhou Misaki",
+                    "zh_cn": "食蜂 操祈",
+                    "jp": "食蜂 操祈"
+                },
+                "abbrev": {
+                    "en": "Shokuhou Misaki",
+                    "zh_cn": "食蜂操祈",
+                    "jp": "食蜂操祈"
+                }
+            },
+            "variant": {},
+            "school": "tokiwadai",
+            "role": "support",
+            "damageType": "explosive",
+            "armorType": "heavy",
+            "weaponType": "hg",
+            "avatarUrl": "https://schale.gg/images/student/collection/10080.webp"
+        },
+        "shun_small": {
+            "displayName": {
+                "full": {
+                    "en": "Sunohara Shun",
+                    "zh_cn": "春原 瞬",
+                    "jp": "春原 シュン"
+                },
+                "abbrev": {
+                    "en": "Shun",
+                    "zh_cn": "瞬",
+                    "jp": "シュン"
+                }
+            },
+            "variant": {
+                "en": "Small",
+                "zh_cn": "小",
+                "jp": "幼女"
+            },
+            "school": "shanhaijing",
+            "role": "dealer",
+            "damageType": "explosive",
+            "armorType": "light",
+            "weaponType": "sr",
+            "avatarUrl": "https://schale.gg/images/student/collection/10025.webp"
+        }
+    }
+}

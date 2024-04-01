@@ -10,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          react: ['react', 'react-dom', 'mobx-react-lite'],
+          react: ['react', 'react-dom', 'mobx', 'mobx-react-lite'],
           ui: ['@radix-ui/themes'],
           data: ['./src/assets/data/students.json']
         }
