@@ -6,7 +6,7 @@ const YELLOW_COLOR: string = ''
 const BLUE_COLOR: string = ''
 const PURPLE_COLOR: string = ''
 
-function getAttackTextAndColor(damageType: DamageType, language: LanguageType): [string, string] {
+function getDamageTextAndColor(damageType: DamageType, language: LanguageType): [string, string] {
     switch (damageType) {
 
         case 'explosive':
@@ -59,7 +59,7 @@ function getAttackTextAndColor(damageType: DamageType, language: LanguageType): 
     }
 }
 
-function getDefenseTextAndColor(armorType: ArmorType, language: LanguageType): [string, string] {
+function getArmorTextAndColor(armorType: ArmorType, language: LanguageType): [string, string] {
     switch (armorType) {
         case 'light':
             switch (language) {
@@ -90,7 +90,7 @@ function getDefenseTextAndColor(armorType: ArmorType, language: LanguageType): [
                 case 'jp':
                     return ['特殊装甲', BLUE_COLOR]
                 case 'zh_cn':
-                    return ['特殊装甲', BLUE_COLOR]
+                    return ['特殊\r\n装甲', BLUE_COLOR]
                 default:
                     return ['', BLUE_COLOR]
             }
@@ -101,7 +101,7 @@ function getDefenseTextAndColor(armorType: ArmorType, language: LanguageType): [
                 case 'jp':
                     return ['弾力装甲', PURPLE_COLOR]
                 case 'zh_cn':
-                    return ['弹力装甲', PURPLE_COLOR]
+                    return ['弹力\r\n装甲', PURPLE_COLOR]
                 default:
                     return ['', PURPLE_COLOR]
             }
@@ -158,4 +158,4 @@ function getSchoolIconUrl(school: StudentSchool): string {
     }
 }
 
-export { getAttackTextAndColor, getDefenseTextAndColor, getRoleIconUrl, getSchoolIconUrl }
+export { getDamageTextAndColor, getArmorTextAndColor, getRoleIconUrl, getSchoolIconUrl }

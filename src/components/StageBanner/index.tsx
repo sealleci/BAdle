@@ -1,17 +1,16 @@
-import { useContext } from 'react'
 import { Avatar, Box, Card, Flex, IconButton, Text } from '@radix-ui/themes'
-import { SelectContext } from '../../stores/select.ts'
+import selectStore from '../../stores/select.ts'
+import './style.scss'
 
 interface StageBannerProps {
     curRound: number
     totalRounds: number
     answerStudentAvatarUrl: string
     answerStudentName: string
+    variant: string
 }
 
-export default function StageBanner({ curRound, totalRounds, answerStudentAvatarUrl, answerStudentName }: StageBannerProps) {
-    const selectStore = useContext(SelectContext)
-
+export default function StageBanner({ curRound, totalRounds, answerStudentAvatarUrl, answerStudentName, variant }: StageBannerProps) {
     return <Card
         size='1'
         style={{
@@ -37,7 +36,11 @@ export default function StageBanner({ curRound, totalRounds, answerStudentAvatar
                     fallback='?'
                     size='5'
                 ></Avatar>
-                <Text>{answerStudentName === '' ? '猜测档案' : answerStudentName}</Text>
+                <Text>{answerStudentName === '' ? '猜测档案' : answerStudentName}
+                    {variant !== '' && <Text
+                        className='variant-name'
+                    >{variant}</Text>}
+                </Text>
             </Flex>
             <Flex
                 direction='row'

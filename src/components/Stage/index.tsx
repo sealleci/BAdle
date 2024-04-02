@@ -1,86 +1,49 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { autorun } from 'mobx'
 import { observer } from 'mobx-react-lite'
-import { Container, Flex, ScrollArea } from '@radix-ui/themes'
-import { SelectContext } from '../../stores/select.ts'
+import { Container, Flex } from '@radix-ui/themes'
+import DataContext from '../../contexts/data.ts'
+import selectStore from '../../stores/select.ts'
 import { getRangeRandom } from '../../utils/random.ts'
+import type { StudentItem } from '../../types/student'
 import StageBanner from '../StageBanner'
-import StageStudentItem from '../StageStudentItem'
-import type { StudentDataItem, StudentDataType } from '../../types/student'
+import SelectedStudentList from '../SelectedStudentList'
 
-interface StageStudentListProps {
-    selectedStudentList: StudentDataItem[]
-    answerStudent: StudentDataItem
-}
-
-function StageStudentList({ selectedStudentList: StudentList, answerStudent }: StageStudentListProps) {
-    const scrollAreaRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        if (scrollAreaRef.current) {
-            scrollAreaRef.current.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' })
-        }
-    })
-
-    return <ScrollArea
-        ref={scrollAreaRef}
-        style={{
-            height: 'calc(100% - 8.5rem)',
-            width: '420px'
-        }}
-    >
-        {
-            StudentList.map((student: StudentDataItem, index: number) => {
-                return <StageStudentItem
-                    key={index}
-                    fullName={student['displayName']['full']['zh_cn'] + ('zh_cn' in student['variant'] ? `（${student['variant']['zh_cn']}）` : '')}
-                    avatarUrl={student['avatarUrl']}
-                    damageType={student['damageType']}
-                    armorType={student['armorType']}
-                    role={student['role']}
-                    school={student['school']}
-                    weaponType={student['weaponType']}
-                    answerStudent={answerStudent}
-                />
-            })
-        }
-    </ScrollArea>
-}
-
-const Stage = observer(({ studentData }: { studentData: StudentDataType }) => {
+const Stage = observer(() => {
     const totalRounds: number = 5
     const [curRound, setCurRound] = useState<number>(0)
-    const [answerStudentId, setAnswerStudentId] = useState<string>('')
-    const [curStudentIdList, setCurStudentIdList] = useState<string[]>([])
-    const [curStudentList, setCurStudentList] = useState<StudentDataItem[]>([])
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false)
-    const selectStore = useContext(SelectContext)
+    const answerStudentId = useRef<string>('')
+    const selectedStudentItemList = useRef<StudentItem[]>([])
+    const selectedStudentIdList = useRef<string[]>([])
+    const studentData = useContext(DataContext)
 
     const rollStudentId = useCallback(() => {
         const studentsIdList = Object.keys(studentData['students'])
-        setAnswerStudentId(studentsIdList[getRangeRandom(0, studentsIdList.length - 1)])
+        answerStudentId.current = studentsIdList[getRangeRandom(0, studentsIdList.length - 1)]
     }, [studentData])
 
     useEffect(() => {
         rollStudentId()
     }, [rollStudentId])
 
-    useEffect(() => {
+    useEffect(() => autorun(() => {
         if (isGameFinished
-            || answerStudentId === ''
+            || answerStudentId.current === ''
             || selectStore.studentId === ''
             || !(selectStore.studentId in studentData['students'])
-            || curStudentIdList.includes(selectStore.studentId)) {
+            || selectedStudentIdList.current.includes(selectStore.studentId)) {
             return
         }
 
-        setCurStudentList([...curStudentList, studentData['students'][selectStore.studentId]])
+        selectedStudentItemList.current.push(studentData['students'][selectStore.studentId])
+        selectedStudentIdList.current.push(selectStore.studentId)
         setCurRound(prev => prev + 1)
-        setCurStudentIdList([...curStudentIdList, selectStore.studentId])
 
-        if (selectStore.studentId === answerStudentId) {
+        if (selectStore.studentId === answerStudentId.current) {
             setIsGameFinished(true)
         }
-    }, [selectStore.studentId, studentData, curStudentList, isGameFinished, curStudentIdList, answerStudentId])
+    }), [studentData, isGameFinished])
 
     useEffect(() => {
         if (curRound >= totalRounds) {
@@ -88,19 +51,19 @@ const Stage = observer(({ studentData }: { studentData: StudentDataType }) => {
         }
     }, [curRound])
 
-    useEffect(() => {
+    useEffect(() => autorun(() => {
         if (!(selectStore.isClear)) {
             return
         }
 
         setCurRound(0)
-        setCurStudentList([])
-        setCurStudentIdList([])
+        selectedStudentItemList.current = []
+        selectedStudentIdList.current = []
         setIsGameFinished(false)
         rollStudentId()
         selectStore.setStudentId('')
         selectStore.setIsClear(false)
-    }, [selectStore.isClear, selectStore, rollStudentId])
+    }), [rollStudentId])
 
     return <Container
         height='100%'
@@ -121,12 +84,19 @@ const Stage = observer(({ studentData }: { studentData: StudentDataType }) => {
             <StageBanner
                 curRound={curRound}
                 totalRounds={totalRounds}
-                answerStudentAvatarUrl={isGameFinished && answerStudentId !== '' ? studentData['students'][answerStudentId]['avatarUrl'] : ''}
-                answerStudentName={isGameFinished && answerStudentId !== '' ? studentData['students'][answerStudentId]['displayName']['full']['zh_cn'] : ''}
+                answerStudentAvatarUrl={isGameFinished && answerStudentId.current !== ''
+                    ? studentData['students'][answerStudentId.current]['avatarUrl']
+                    : ''}
+                answerStudentName={isGameFinished && answerStudentId.current !== ''
+                    ? studentData['students'][answerStudentId.current]['displayName']['full']['zh_cn']
+                    : ''}
+                variant={isGameFinished && answerStudentId.current !== ''
+                    ? studentData['students'][answerStudentId.current]['variant']['zh_cn']
+                    : ''}
             />
-            <StageStudentList
-                selectedStudentList={curStudentList}
-                answerStudent={studentData['students'][answerStudentId]}
+            <SelectedStudentList
+                selectedStudentItemList={selectedStudentItemList.current}
+                answerStudent={studentData['students'][answerStudentId.current]}
             />
         </Flex>
     </Container>

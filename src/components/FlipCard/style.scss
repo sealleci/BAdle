@@ -1,0 +1,114 @@
+@use '../../sass/general' as g;
+
+$size-start-index: 3;
+$size-end-index: 8;
+$sequence-start-index: 1;
+$sequence-end-index: 5;
+$animation-duration: .35s;
+
+@keyframes flip {
+    from {
+        transform: rotateY(90deg);
+    }
+
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes back-flip {
+    from {
+        transform: rotateY(0deg);
+        visibility: visible;
+    }
+
+    50% {
+        transform: rotateY(-90deg);
+        visibility: visible;
+    }
+
+    51% {
+        transform: rotateY(-90deg);
+        visibility: hidden;
+    }
+
+    to {
+        transform: rotateY(-90deg);
+        visibility: hidden;
+    }
+}
+
+.rt-Box.flip-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rt-BaseCard.flip-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    font-size: .8rem;
+    background-color: g.$pink-color;
+
+    @for $i from $size-start-index through $size-end-index {
+        &.flip-card--w#{$i} {
+            width: #{$i}rem;
+        }
+    }
+
+    @for $i from $sequence-start-index through $sequence-end-index {
+        &.flip-card--s#{$i} {
+            animation-name: flip;
+            animation-timing-function: linear;
+            animation-duration: $animation-duration;
+            animation-iteration-count: 1;
+            animation-delay: calc($animation-duration * ($i - 1));
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &.flip-card--same {
+        background-color: g.$blue-color;
+    }
+
+    span {
+        text-align: center;
+    }
+
+    img {
+        width: 80%;
+        filter: brightness(0);
+    }
+}
+
+.rt-BaseCard.flip-card-back {
+    position: absolute;
+    height: 4rem;
+    background-color: white;
+    visibility: visible;
+
+    @for $i from $size-start-index through $size-end-index {
+        &.flip-card-back--w#{$i} {
+            width: #{$i}rem;
+        }
+    }
+
+    @for $i from $sequence-start-index through $sequence-end-index {
+        &.flip-card-back--s#{$i} {
+            animation-name: back-flip;
+            animation-timing-function: linear;
+            animation-duration: $animation-duration;
+            animation-iteration-count: 1;
+            animation-delay: calc($animation-duration * ($i - 1));
+            animation-fill-mode: forwards;
+        }
+    }
+}

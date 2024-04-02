@@ -1,0 +1,13 @@
+{
+  "name": "crawler",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsc main.ts --target ESNext --esModuleInterop --module ESNext --moduleResolution bundler",
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@crawlee/playwright": "^3.8.2",
+    "playwright": "^1.42.1"
+  }
+}

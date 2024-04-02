@@ -9,11 +9,17 @@ A simple wordle game featured [Blue Archive](https://www.youtube.com/channel/UCs
 ## Tech Stacks
 
 - React
+- Bun
 - Vite
 - TypeScript
 - Sass
 - MobX
 - Radix UI
+
+### Crawler
+
+- Crawlee
+- Playwright
 
 ## TODO
 

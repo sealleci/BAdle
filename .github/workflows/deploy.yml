@@ -11,16 +11,16 @@ jobs:
     - name: Checkout workplace
       uses: actions/checkout@v4
 
-    - name: Install Node.js
-      uses: actions/setup-node@v4
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v1
       with:
-        node-version: 20
+        bun-version: latest
 
     - name: Install dependencies
-      run: npm install
+      run: bun install
 
     - name: Build React App
-      run: npm run build
+      run: bun run build
 
     - name: Move 'dist' to '_site'
       run: mkdir _site && mv dist/* _site

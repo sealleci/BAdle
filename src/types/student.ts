@@ -6,7 +6,7 @@ type StudentRole = 'tank' | 'dealer' | 'healer' | 'support' | 't.s.'
 type StudentSchool = 'abydos' | 'arius' | 'gehenna' | 'hyakkiyako' | 'millennium' | 'redwinter' | 'shanhaijing' | 'srt' | 'trinity' | 'valkyrie' | 'tokiwadai' | 'etc'
 type WeaponType = 'sg' | 'smg' | 'ar' | 'gl' | 'hg' | 'rl' | 'sr' | 'rg' | 'mg' | 'mt' | 'ft'
 
-interface StudentDataItem {
+interface StudentItem {
     displayName: {
         full: Record<LanguageType, string>
         abbrev: Record<LanguageType, string>
@@ -21,15 +21,15 @@ interface StudentDataItem {
 }
 
 interface StudentDataType {
-    students: Record<string, StudentDataItem>
+    students: Record<string, StudentItem>
 }
 
 export type {
-    DamageType,
     ArmorType,
+    DamageType,
+    StudentDataType,
+    StudentItem,
     StudentRole,
     StudentSchool,
-    WeaponType,
-    StudentDataItem,
-    StudentDataType
+    WeaponType
 }

@@ -1,4 +1,3 @@
-import { createContext } from "react"
 import { makeAutoObservable } from "mobx"
 
 class SelectStore {
@@ -18,6 +17,6 @@ class SelectStore {
     }
 }
 
-const SelectContext = createContext<SelectStore>(new SelectStore())
+const selectStore = new SelectStore()
 
-export { SelectContext, SelectStore }
+export default selectStore
