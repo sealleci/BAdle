@@ -62,6 +62,7 @@ const SelectedStudentItem = memo(({
             <Flex
                 direction='row'
                 justify='between'
+                wrap='wrap'
             >
                 <FlipCard
                     size={4}

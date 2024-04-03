@@ -10,6 +10,7 @@
 
         &__item {
             margin: 0 .25rem .25rem .25rem !important;
+            width: calc(100% - .5rem) !important;
 
             &:last-child {
                 margin-bottom: 3rem !important;
