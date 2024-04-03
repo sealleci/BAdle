@@ -1,0 +1,14 @@
+@use '../../sass/general' as g;
+
+.rt-Container.left-aside {
+    @media screen and (max-width: g.$small-screen-width) {
+        display: none;
+    }
+}
+
+.left-banner {
+    img {
+        width: 120px;
+        user-select: none;
+    }
+}

@@ -1,10 +1,17 @@
-@use '../../sass/general' as g;
+@use "sass:map";
 
 $size-start-index: 3;
 $size-end-index: 8;
 $sequence-start-index: 1;
 $sequence-end-index: 5;
-$animation-duration: .35s;
+$animation-duration: .25s;
+$index-by-type: (
+    "red": 1,
+    "yellow": 2,
+    "blue": 3,
+    "purple": 4
+);
+
 
 @keyframes flip {
     from {
@@ -44,6 +51,7 @@ $animation-duration: .35s;
 
 .rt-Box.flip-card-wrapper {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -55,8 +63,52 @@ $animation-duration: .35s;
     justify-content: center;
     align-items: center;
     height: 4rem;
-    font-size: .8rem;
-    background-color: g.$pink-color;
+    background-color: var(--pink-5);
+    animation-name: flip;
+    animation-timing-function: linear;
+    animation-duration: $animation-duration;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 100;
+
+    &.flip-card--correct {
+        background-color: var(--green-5);
+    }
+
+    span {
+        text-align: center;
+        user-select: none;
+    }
+
+    img {
+        width: 80%;
+        filter: brightness(.3);
+        user-select: none;
+    }
+
+    .type-dots {
+        display: flex;
+        position: absolute;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        bottom: .33rem;
+        left: 0;
+
+        span {
+            $dot-size: .25rem;
+
+            display: inline-block;
+            position: relative;
+            height: $dot-size;
+            width: $dot-size;
+            margin: 0 3px;
+            border-radius: 50%;
+            background-color: white;
+            outline: 1px solid var(--gray-8);
+        }
+    }
 
     @for $i from $size-start-index through $size-end-index {
         &.flip-card--w#{$i} {
@@ -66,26 +118,14 @@ $animation-duration: .35s;
 
     @for $i from $sequence-start-index through $sequence-end-index {
         &.flip-card--s#{$i} {
-            animation-name: flip;
-            animation-timing-function: linear;
-            animation-duration: $animation-duration;
-            animation-iteration-count: 1;
             animation-delay: calc($animation-duration * ($i - 1));
-            animation-fill-mode: forwards;
         }
     }
 
-    &.flip-card--same {
-        background-color: g.$blue-color;
-    }
-
-    span {
-        text-align: center;
-    }
-
-    img {
-        width: 80%;
-        filter: brightness(0);
+    @each $color in map.keys($index-by-type) {
+        &.flip-card--#{$color}>.type-dots>span:nth-child(#{map.get($index-by-type, $color)}) {
+            background-color: var(--gray-8);
+        }
     }
 }
 
@@ -94,6 +134,12 @@ $animation-duration: .35s;
     height: 4rem;
     background-color: white;
     visibility: visible;
+    animation-name: back-flip;
+    animation-timing-function: linear;
+    animation-duration: $animation-duration;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 200;
 
     @for $i from $size-start-index through $size-end-index {
         &.flip-card-back--w#{$i} {
@@ -103,12 +149,7 @@ $animation-duration: .35s;
 
     @for $i from $sequence-start-index through $sequence-end-index {
         &.flip-card-back--s#{$i} {
-            animation-name: back-flip;
-            animation-timing-function: linear;
-            animation-duration: $animation-duration;
-            animation-iteration-count: 1;
             animation-delay: calc($animation-duration * ($i - 1));
-            animation-fill-mode: forwards;
         }
     }
 }

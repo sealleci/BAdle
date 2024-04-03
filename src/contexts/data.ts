@@ -1,4 +1,6 @@
 import { createContext } from 'react'
 import type { StudentDataType } from '../types/student'
 
-export default createContext<StudentDataType>({ 'students': {} })
+const DataContext = createContext<StudentDataType>({ 'students': {} } satisfies StudentDataType)
+
+export default DataContext

@@ -1,112 +1,157 @@
 import type { LanguageType } from '../types/language.ts'
 import type { DamageType, ArmorType, StudentRole, StudentSchool } from '../types/student.ts'
 
-const RED_COLOR: string = ''
-const YELLOW_COLOR: string = ''
-const BLUE_COLOR: string = ''
-const PURPLE_COLOR: string = ''
+const RED_COLOR: string = 'red'
+const YELLOW_COLOR: string = 'yellow'
+const BLUE_COLOR: string = 'blue'
+const PURPLE_COLOR: string = 'purple'
 
-function getDamageTextAndColor(damageType: DamageType, language: LanguageType): [string, string] {
+function getDamageText(damageType: DamageType, language: LanguageType): string {
     switch (damageType) {
-
         case 'explosive':
             switch (language) {
                 case 'en':
-                    return ['Explosive', RED_COLOR]
+                    return 'Explosive'
                 case 'jp':
-                    return ['爆発', RED_COLOR]
+                    return '爆発'
                 case 'zh_cn':
-                    return ['爆发', RED_COLOR]
+                    return '爆炸'
+                case 'kr':
+                    return '폭발'
                 default:
-                    return ['', RED_COLOR]
+                    return ''
             }
         case 'piercing':
             switch (language) {
                 case 'en':
-                    return ['Piercing', YELLOW_COLOR]
+                    return 'Piercing'
                 case 'jp':
-                    return ['貫通', YELLOW_COLOR]
+                    return '貫通'
                 case 'zh_cn':
-                    return ['贯穿', YELLOW_COLOR]
+                    return '贯通'
+                case 'kr':
+                    return '관통'
                 default:
-                    return ['', YELLOW_COLOR]
+                    return ''
             }
         case 'mystic':
             switch (language) {
                 case 'en':
-                    return ['Mystic', BLUE_COLOR]
+                    return 'Mystic'
                 case 'jp':
-                    return ['神秘', BLUE_COLOR]
+                    return '神秘'
                 case 'zh_cn':
-                    return ['神秘', BLUE_COLOR]
+                    return '神秘'
+                case 'kr':
+                    return '신비'
                 default:
-                    return ['', BLUE_COLOR]
+                    return ''
             }
         case 'sonic':
             switch (language) {
                 case 'en':
-                    return ['Sonic', PURPLE_COLOR]
+                    return 'Sonic'
                 case 'jp':
-                    return ['振動', PURPLE_COLOR]
+                    return '振動'
                 case 'zh_cn':
-                    return ['震动', PURPLE_COLOR]
+                    return '振动'
+                case 'kr':
+                    return '진동'
                 default:
-                    return ['', PURPLE_COLOR]
+                    return ''
             }
         default:
-            return ['', '']
+            return ''
 
     }
 }
 
-function getArmorTextAndColor(armorType: ArmorType, language: LanguageType): [string, string] {
+function getDamageColor(damageType: DamageType): string {
+    switch (damageType) {
+        case 'explosive':
+            return RED_COLOR
+        case 'piercing':
+            return YELLOW_COLOR
+        case 'mystic':
+            return BLUE_COLOR
+        case 'sonic':
+            return PURPLE_COLOR
+        default:
+            return ''
+    }
+}
+
+function getArmorText(armorType: ArmorType, language: LanguageType): string {
     switch (armorType) {
         case 'light':
             switch (language) {
                 case 'en':
-                    return ['Light', RED_COLOR]
+                    return 'Light'
                 case 'jp':
-                    return ['軽装備', RED_COLOR]
+                    return '軽装備'
                 case 'zh_cn':
-                    return ['轻装甲', RED_COLOR]
+                    return '轻型\r\n装甲'
+                case 'kr':
+                    return '경장갑'
                 default:
-                    return ['', RED_COLOR]
+                    return ''
             }
         case 'heavy':
             switch (language) {
                 case 'en':
-                    return ['Heavy', YELLOW_COLOR]
+                    return 'Heavy'
                 case 'jp':
-                    return ['重装甲', YELLOW_COLOR]
+                    return '重装甲'
                 case 'zh_cn':
-                    return ['重装甲', YELLOW_COLOR]
+                    return '重型\r\n装甲'
+                case 'kr':
+                    return '중장갑'
                 default:
-                    return ['', YELLOW_COLOR]
+                    return ''
             }
         case 'special':
             switch (language) {
                 case 'en':
-                    return ['Special', BLUE_COLOR]
+                    return 'Special'
                 case 'jp':
-                    return ['特殊装甲', BLUE_COLOR]
+                    return '特殊\r\n装甲'
                 case 'zh_cn':
-                    return ['特殊\r\n装甲', BLUE_COLOR]
+                    return '特殊\r\n装甲'
+                case 'kr':
+                    return '특수\r\n장갑'
                 default:
-                    return ['', BLUE_COLOR]
+                    return ''
             }
         case 'elastic':
             switch (language) {
                 case 'en':
-                    return ['Elastic', PURPLE_COLOR]
+                    return 'Elastic'
                 case 'jp':
-                    return ['弾力装甲', PURPLE_COLOR]
+                    return '弾力\r\n装甲'
                 case 'zh_cn':
-                    return ['弹力\r\n装甲', PURPLE_COLOR]
+                    return '弹性\r\n装甲'
+                case 'kr':
+                    return '탄력\r\n장갑'
                 default:
-                    return ['', PURPLE_COLOR]
+                    return ''
             }
         default:
-            return ['', '']
+            return ''
+    }
+}
+
+function getArmorColor(armorType: ArmorType): string {
+    switch (armorType) {
+        case 'light':
+            return RED_COLOR
+        case 'heavy':
+            return YELLOW_COLOR
+        case 'special':
+            return BLUE_COLOR
+        case 'elastic':
+            return PURPLE_COLOR
+        default:
+            return ''
     }
 }
 
@@ -158,4 +203,4 @@ function getSchoolIconUrl(school: StudentSchool): string {
     }
 }
 
-export { getDamageTextAndColor, getArmorTextAndColor, getRoleIconUrl, getSchoolIconUrl }
+export { getDamageText, getDamageColor, getArmorText, getArmorColor, getRoleIconUrl, getSchoolIconUrl }

@@ -1,19 +1,35 @@
-import { makeAutoObservable } from "mobx"
+import { makeAutoObservable } from 'mobx'
 
 class SelectStore {
-    studentId: string = ''
-    isClear: boolean = false
+    private _studentId: string = ''
+    private _isClear: boolean = false
 
     constructor() {
         makeAutoObservable(this)
     }
 
-    setStudentId(id: string) {
-        this.studentId = id
+    get studentId() {
+        return this._studentId
     }
 
-    setIsClear(isClear: boolean) {
-        this.isClear = isClear
+    private set studentId(value: string) {
+        this._studentId = value
+    }
+
+    get isClear() {
+        return this._isClear
+    }
+
+    private set isClear(value: boolean) {
+        this._isClear = value
+    }
+
+    setIsClear(value: boolean) {
+        this.isClear = value
+    }
+
+    setStudentId(value: string) {
+        this.studentId = value
     }
 }
 

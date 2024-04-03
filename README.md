@@ -23,8 +23,9 @@ A simple wordle game featured [Blue Archive](https://www.youtube.com/channel/UCs
 
 ## TODO
 
-- Korean Language
 - Arona and Prana
 - Cookie storage
 - Daily mode and Endless modes
+- Long list optimization
+- Filter sort list
 - Mobile layout

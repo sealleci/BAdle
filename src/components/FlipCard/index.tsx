@@ -6,15 +6,21 @@ interface FlipCardProps {
     size: number
     isSame: boolean
     sequence: number
+    dotColor?: string
     children?: ReactNode
 }
 
-const FlipCard = memo(({ size, isSame, sequence, children }: FlipCardProps) => {
+const FlipCard = memo(({ size, isSame, sequence, dotColor, children }: FlipCardProps) => {
     return <Box
         className='flip-card-wrapper'
     >
         <Card
-            className={`flip-card flip-card--w${size} flip-card--s${sequence}${isSame ? ' flip-card--same' : ''}`}
+            className={`flip-card flip-card--w${size} flip-card--s${sequence}${isSame
+                ? ' flip-card--correct'
+                : ''}${dotColor !== undefined && dotColor !== ''
+                    ? ` flip-card--${dotColor}`
+                    : ''
+                }`}
             size='1'
         >
             {children}

@@ -1,4 +1,5 @@
 import { Container, Flex } from '@radix-ui/themes'
+import './style.scss'
 
 export default function LeftAside() {
     return <Container
@@ -6,6 +7,7 @@ export default function LeftAside() {
         width='320px'
         flexGrow='0'
         flexShrink='0'
+        className='left-aside'
     >
         <Flex
             direction='column'
@@ -20,13 +22,12 @@ export default function LeftAside() {
                 justify='center'
                 as='div'
                 width='100%'
+                className='left-banner'
             >
                 <img
                     src='https://webcnstatic.yostar.net/ba_cn_web/prod/web/assets/logo_2.e1693a80.png'
                     alt='logo'
                     draggable={false}
-                    width='120px'
-
                 />
             </Flex>
         </Flex>

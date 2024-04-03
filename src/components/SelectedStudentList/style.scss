@@ -1,0 +1,37 @@
+@use '../../sass/general' as g;
+
+.selected-student-list {
+    height: calc(100% - 8.25rem) !important;
+    width: 420px !important;
+
+    @media screen and (max-width: g.$small-screen-width) {
+        margin-right: 0 !important;
+        width: 100% !important;
+
+        &__item {
+            margin: 0 .25rem .25rem .25rem !important;
+
+            &:last-child {
+                margin-bottom: 3rem !important;
+            }
+        }
+    }
+
+    &__item {
+        margin-right: 1rem;
+        margin-bottom: .25rem;
+    }
+}
+
+.prop-text {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .7);
+
+    &.armor-text {
+        font-size: .8rem;
+    }
+
+    &.weapon-text {
+        font-weight: bold;
+    }
+}

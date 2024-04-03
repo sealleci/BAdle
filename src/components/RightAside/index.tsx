@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Card, Container, Flex, TextField } from '@radix-ui/themes'
 import SearchStudentList from '../SearchStudentList'
+import './style.scss'
 
 export default function RightAside() {
     const [prompt, setPrompt] = useState<string>('')
@@ -8,12 +9,10 @@ export default function RightAside() {
 
     return <Container
         height='100%'
-        width='320px'
+        // width='320px'
         flexGrow='0'
         flexShrink='0'
-        style={{
-            padding: '.25rem'
-        }}
+        className='right-aside'
     >
         <Card style={{
             height: '100%',
@@ -30,7 +29,6 @@ export default function RightAside() {
                     onInput={event => { setPrompt(event.currentTarget.value) }}
                     onFocus={() => { setIsFocus(true) }}
                     onBlur={() => { setIsFocus(false) }}
-                    // value={searchText}
                     radius='full'
                     placeholder='搜索学生'
                     style={{

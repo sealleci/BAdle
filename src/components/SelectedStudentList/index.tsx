@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef } from 'react'
-import { Avatar, Card, Flex, ScrollArea, Text } from '@radix-ui/themes'
-import { getDamageTextAndColor, getArmorTextAndColor, getRoleIconUrl, getSchoolIconUrl } from '../../utils/icon.ts'
+import { Avatar, Box, Card, Flex, ScrollArea, Text } from '@radix-ui/themes'
+import languageStore from '../../stores/language.ts'
+import { getDamageText, getDamageColor, getArmorText, getArmorColor, getRoleIconUrl, getSchoolIconUrl } from '../../utils/icon.ts'
 import type { DamageType, ArmorType, StudentRole, StudentSchool, WeaponType, StudentItem } from '../../types/student.ts'
 import FlipCard from '../FlipCard/index.tsx'
 import './style.scss'
@@ -33,9 +34,7 @@ const SelectedStudentItem = memo(({
 }: SelectedStudentItemProps) => {
     return <Card
         size='1'
-        style={{
-            marginRight: '1rem'
-        }}
+        className='selected-student-list__item'
     >
         <Flex
             direction='column'
@@ -51,6 +50,7 @@ const SelectedStudentItem = memo(({
                     size='5'
                     src={avatarUrl}
                     fallback=''
+                    draggable={false}
                 ></Avatar>
                 <Text>
                     {fullName}
@@ -78,22 +78,46 @@ const SelectedStudentItem = memo(({
                     size={4}
                     isSame={sameDamageType[1]}
                     sequence={2}
+                    dotColor={getDamageColor(sameDamageType[0])}
                 >
-                    <Text as='div'>{getDamageTextAndColor(sameDamageType[0], 'zh_cn')[0]}</Text>
+                    <Text
+                        className='prop-text damage-text'
+                    >{getDamageText(sameDamageType[0], languageStore.language)}</Text>
+                    <Box
+                        className='type-dots'
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </Box>
                 </FlipCard>
                 <FlipCard
                     size={4}
                     isSame={sameArmorType[1]}
                     sequence={3}
+                    dotColor={getArmorColor(sameArmorType[0])}
                 >
-                    <Text>{getArmorTextAndColor(sameArmorType[0], 'zh_cn')[0]}</Text>
+                    <Text
+                        className='prop-text armor-text'
+                    >{getArmorText(sameArmorType[0], languageStore.language)}</Text>
+                    <Box
+                        className='type-dots'
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </Box>
                 </FlipCard>
                 <FlipCard
                     size={4}
                     isSame={sameWeaponType[1]}
                     sequence={4}
                 >
-                    <Text>{sameWeaponType[0].toLocaleUpperCase()}</Text>
+                    <Text
+                        className='prop-text weapon-text'
+                    >{sameWeaponType[0].toLocaleUpperCase()}</Text>
                 </FlipCard>
                 <FlipCard
                     size={4}
@@ -123,18 +147,19 @@ function SelectedStudentList({ selectedStudentItemList, answerStudent }: Selecte
     return <ScrollArea
         ref={scrollAreaRef}
         size='2'
-        style={{
-            height: 'calc(100% - 8.5rem)',
-            width: '420px'
-        }}
+        className='selected-student-list'
     >
         {
             selectedStudentItemList.map((student: StudentItem, index: number) => {
                 return <SelectedStudentItem
                     key={index}
                     avatarUrl={student['avatarUrl']}
-                    fullName={student['displayName']['full']['zh_cn']}
-                    variant={'zh_cn' in student['variant'] ? student['variant']['zh_cn'] : ''}
+                    fullName={languageStore.language in student['displayName']['full']
+                        ? student['displayName']['full'][languageStore.language]
+                        : ''}
+                    variant={languageStore.language in student['variant']
+                        ? student['variant'][languageStore.language]
+                        : ''}
                     sameArmorType={[student['armorType'], answerStudent['armorType'] === student['armorType']]}
                     sameDamageType={[student['damageType'], answerStudent['damageType'] === student['damageType']]}
                     sameRole={[student['role'], answerStudent['role'] === student['role']]}

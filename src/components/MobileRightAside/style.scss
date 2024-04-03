@@ -1,0 +1,13 @@
+@use '../../sass/general' as g;
+
+.rt-BaseButton.mobile-add-student-btn {
+    display: none;
+
+    @media screen and (max-width: g.$small-screen-width) {
+        display: block;
+        position: absolute;
+        bottom: .5rem;
+        right: .5rem;
+        z-index: 1000 !important;
+    }
+}

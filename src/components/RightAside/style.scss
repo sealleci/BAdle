@@ -1,0 +1,10 @@
+@use '../../sass/general' as g;
+
+.right-aside {
+    padding: .25rem;
+    width: 320px;
+
+    @media screen and (max-width: g.$small-screen-width) {
+        display: none;
+    }
+}

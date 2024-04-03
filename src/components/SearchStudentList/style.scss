@@ -1,19 +1,34 @@
+@use "../../sass/general" as g;
+
 $transition-duration: 0.2s;
 
 .search-student-item {
     margin-right: 1rem;
+    margin-bottom: .125rem;
     transition: background-color $transition-duration;
 
-    .select-student-btn {
+    &__select-btn.rt-BaseButton {
         opacity: 0;
         transition: opacity $transition-duration;
+
+        @media screen and (max-width: g.$small-screen-width) {
+            opacity: 1 !important;
+        }
+    }
+
+    &__name {
+        user-select: none;
     }
 
     &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--gray-4);
 
-        .select-student-btn {
+        .search-student-item__select-btn.rt-BaseButton {
             opacity: 1;
         }
+    }
+
+    @media screen and (max-width: g.$small-screen-width) {
+        font-size: .75rem;
     }
 }

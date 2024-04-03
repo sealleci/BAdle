@@ -46,7 +46,7 @@ function scrapeCJKHtml(rawAbbrevName: string, rawFullName: string, studentItem: 
         studentItem['variant'][language] = tmpNameRxMatch2 !== null ? tmpNameRxMatch2[1].trim() : ''
     }
 
-    studentItem['displayName']['full'][language] = deleteNotation(rawFullName)
+    studentItem['displayName']['full'][language] = deleteNotation(rawFullName.replace(/\s+/g, ' '))
     studentItem['displayName']['abbrev'][language] = deleteNotation(abbrevName)
 
     return studentItem
@@ -89,7 +89,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
             studentItem['variant']['en'] = tmpNameRxMatch2 !== null ? tmpNameRxMatch2[1].trim() : ''
         }
 
-        studentItem['displayName']['full']['en'] = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
+        studentItem['displayName']['full']['en'] = $post.querySelector('#ba-student-fullname')?.textContent?.trim().replace(/\s+/g, ' ') ?? ''
         studentItem['displayName']['abbrev']['en'] = abbrevName
         const tmpSchoolRxMatch = $post.querySelector('#ba-student-school-img')?.getAttribute('src')?.match(/.*?School_Icon_(.+?)_.*/)
         studentItem['school'] = tmpSchoolRxMatch !== null && tmpSchoolRxMatch !== undefined ? tmpSchoolRxMatch[1].toLowerCase().trim() : ''
@@ -102,10 +102,10 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         return studentItem
     }, studentItem)
 
+    await page.exposeFunction('scrapeCJKHtml', scrapeCJKHtml)
     await page.locator('#ba-navbar-languageselector').click()
     await page.locator('#ba-navbar-languageselector-kr').click()
     await page.locator('body.font-kr').waitFor()
-    await page.exposeFunction('scrapeCJKHtml', scrapeCJKHtml)
     studentItem = await page.locator('#loaded-module').evaluate(($post, studentItem) => {
         const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
         const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
@@ -124,8 +124,8 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
     }, studentItem)
 
     await page.locator('#ba-navbar-languageselector').click()
-    await page.locator('#ba-navbar-languageselector-cn').click()
-    await page.locator('body.font-cn').waitFor()
+    await page.locator('#ba-navbar-languageselector-zh').click()
+    await page.locator('body.font-zh').waitFor()
     studentItem = await page.locator('#loaded-module').evaluate(($post, studentItem) => {
         const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
         const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
