@@ -155,6 +155,11 @@ $index-by-type: (
     animation-fill-mode: forwards;
     z-index: 200;
 
+    @media screen and (max-width: g.$small-screen-width) {
+        height: 3.25rem !important;
+        width: 3.25rem !important;
+    }
+
     @for $i from $size-start-index through $size-end-index {
         &.flip-card-back--w#{$i} {
             width: #{$i}rem;
