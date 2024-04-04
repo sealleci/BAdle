@@ -5,6 +5,6 @@
     width: 320px;
 
     @media screen and (max-width: g.$small-screen-width) {
-        display: none;
+        display: none !important;
     }
 }

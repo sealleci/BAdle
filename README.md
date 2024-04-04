@@ -28,4 +28,5 @@ A simple wordle game featured [Blue Archive](https://www.youtube.com/channel/UCs
 - Daily mode and Endless modes
 - Long list optimization
 - Filter sort list
-- Mobile layout
+- Change weapon type to position type
+- Mobile layout, Portal

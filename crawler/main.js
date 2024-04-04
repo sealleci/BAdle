@@ -42,6 +42,7 @@ async function parseStudentInfo(page) {
         'damageType': '',
         'armorType': '',
         'weaponType': '',
+        'positionType': '',
         'avatarUrl': ''
     };
     await page.locator('#loaded-module').waitFor();
@@ -70,6 +71,7 @@ async function parseStudentInfo(page) {
         studentItem['damageType'] = $post.querySelector('#ba-student-attacktype-label')?.textContent?.toLowerCase().trim() ?? '';
         studentItem['armorType'] = $post.querySelector('#ba-student-defensetype-label')?.textContent?.toLowerCase().trim() ?? '';
         studentItem['weaponType'] = $post.querySelector('#ba-student-weapon-type')?.textContent?.toLowerCase().trim() ?? '';
+        studentItem['positionType'] = $post.querySelector('#ba-student-position-label')?.textContent?.toLowerCase().trim() ?? '';
         studentItem['avatarUrl'] = `https://schale.gg/${$post.querySelector('#ba-profile-portrait-img')?.getAttribute('src') ?? ''}`;
         return studentItem;
     }, studentItem);

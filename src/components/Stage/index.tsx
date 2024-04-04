@@ -12,7 +12,7 @@ import SelectedStudentList from '../SelectedStudentList'
 import './style.scss'
 
 const Stage = observer(() => {
-    const totalRounds: number = 5
+    const totalRounds: number = 6
     const [curRound, setCurRound] = useState<number>(0)
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false)
     const answerStudentId = useRef<string>('')

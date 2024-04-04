@@ -13,6 +13,7 @@ interface StudentItem {
     damageType: string
     armorType: string
     weaponType: string
+    positionType: string
     avatarUrl: string
 }
 
@@ -64,6 +65,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         'damageType': '',
         'armorType': '',
         'weaponType': '',
+        'positionType': '',
         'avatarUrl': ''
     }
 
@@ -97,6 +99,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         studentItem['damageType'] = $post.querySelector('#ba-student-attacktype-label')?.textContent?.toLowerCase().trim() ?? ''
         studentItem['armorType'] = $post.querySelector('#ba-student-defensetype-label')?.textContent?.toLowerCase().trim() ?? ''
         studentItem['weaponType'] = $post.querySelector('#ba-student-weapon-type')?.textContent?.toLowerCase().trim() ?? ''
+        studentItem['positionType'] = $post.querySelector('#ba-student-position-label')?.textContent?.toLowerCase().trim() ?? ''
         studentItem['avatarUrl'] = `https://schale.gg/${$post.querySelector('#ba-profile-portrait-img')?.getAttribute('src') ?? ''}`
 
         return studentItem

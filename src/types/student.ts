@@ -5,6 +5,7 @@ type ArmorType = 'light' | 'heavy' | 'special' | 'elastic'
 type StudentRole = 'tank' | 'dealer' | 'healer' | 'support' | 't.s.'
 type StudentSchool = 'abydos' | 'arius' | 'gehenna' | 'hyakkiyako' | 'millennium' | 'redwinter' | 'shanhaijing' | 'srt' | 'trinity' | 'valkyrie' | 'tokiwadai' | 'etc'
 type WeaponType = 'sg' | 'smg' | 'ar' | 'gl' | 'hg' | 'rl' | 'sr' | 'rg' | 'mg' | 'mt' | 'ft'
+type PositionType = 'front' | 'middle' | 'back'
 
 interface StudentItem {
     displayName: {
@@ -17,6 +18,7 @@ interface StudentItem {
     damageType: DamageType
     armorType: ArmorType
     weaponType: WeaponType
+    positionType: PositionType
     avatarUrl: string
 }
 
@@ -27,6 +29,7 @@ interface StudentDataType {
 export type {
     ArmorType,
     DamageType,
+    PositionType,
     StudentDataType,
     StudentItem,
     StudentRole,

@@ -14,6 +14,9 @@ export default function StageBanner({ curRound, totalRounds, answerStudentAvatar
     return <Card
         size='1'
         className='stage-banner'
+        style={{
+            height: '8.25rem'
+        }}
     >
         <Flex
             direction='column'

@@ -90,7 +90,7 @@ function getArmorText(armorType: ArmorType, language: LanguageType): string {
                 case 'jp':
                     return '軽装備'
                 case 'zh_cn':
-                    return '轻型\r\n装甲'
+                    return '轻型\n装甲'
                 case 'kr':
                     return '경장갑'
                 default:
@@ -103,7 +103,7 @@ function getArmorText(armorType: ArmorType, language: LanguageType): string {
                 case 'jp':
                     return '重装甲'
                 case 'zh_cn':
-                    return '重型\r\n装甲'
+                    return '重型\n装甲'
                 case 'kr':
                     return '중장갑'
                 default:
@@ -114,11 +114,11 @@ function getArmorText(armorType: ArmorType, language: LanguageType): string {
                 case 'en':
                     return 'Special'
                 case 'jp':
-                    return '特殊\r\n装甲'
+                    return '特殊\n装甲'
                 case 'zh_cn':
-                    return '特殊\r\n装甲'
+                    return '特殊\n装甲'
                 case 'kr':
-                    return '특수\r\n장갑'
+                    return '특수\n장갑'
                 default:
                     return ''
             }
@@ -127,11 +127,11 @@ function getArmorText(armorType: ArmorType, language: LanguageType): string {
                 case 'en':
                     return 'Elastic'
                 case 'jp':
-                    return '弾力\r\n装甲'
+                    return '弾力\n装甲'
                 case 'zh_cn':
-                    return '弹性\r\n装甲'
+                    return '弹性\n装甲'
                 case 'kr':
-                    return '탄력\r\n장갑'
+                    return '탄력\n장갑'
                 default:
                     return ''
             }

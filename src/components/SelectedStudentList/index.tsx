@@ -2,7 +2,7 @@ import { memo, useEffect, useRef } from 'react'
 import { Avatar, Box, Card, Flex, ScrollArea, Text } from '@radix-ui/themes'
 import languageStore from '../../stores/language.ts'
 import { getDamageText, getDamageColor, getArmorText, getArmorColor, getRoleIconUrl, getSchoolIconUrl } from '../../utils/icon.ts'
-import type { DamageType, ArmorType, StudentRole, StudentSchool, WeaponType, StudentItem } from '../../types/student.ts'
+import type { ArmorType, DamageType, PositionType, StudentRole, StudentSchool, StudentItem } from '../../types/student.ts'
 import FlipCard from '../FlipCard/index.tsx'
 import './style.scss'
 
@@ -13,7 +13,8 @@ interface SelectedStudentItemProps {
     sameDamageType: [DamageType, boolean]
     sameRole: [StudentRole, boolean]
     sameSchool: [StudentSchool, boolean]
-    sameWeaponType: [WeaponType, boolean]
+    // sameWeaponType: [WeaponType, boolean]
+    samePositionType: [PositionType, boolean]
     variant: string
 }
 
@@ -29,7 +30,7 @@ const SelectedStudentItem = memo(({
     sameDamageType,
     sameRole,
     sameSchool,
-    sameWeaponType,
+    samePositionType,
     variant
 }: SelectedStudentItemProps) => {
     return <Card
@@ -113,12 +114,12 @@ const SelectedStudentItem = memo(({
                 </FlipCard>
                 <FlipCard
                     size={4}
-                    isSame={sameWeaponType[1]}
+                    isSame={samePositionType[1]}
                     sequence={4}
                 >
                     <Text
-                        className='prop-text weapon-text'
-                    >{sameWeaponType[0].toLocaleUpperCase()}</Text>
+                        className='prop-text position-text'
+                    >{samePositionType[0].toLocaleUpperCase()}</Text>
                 </FlipCard>
                 <FlipCard
                     size={4}
@@ -165,7 +166,7 @@ function SelectedStudentList({ selectedStudentItemList, answerStudent }: Selecte
                     sameDamageType={[student['damageType'], answerStudent['damageType'] === student['damageType']]}
                     sameRole={[student['role'], answerStudent['role'] === student['role']]}
                     sameSchool={[student['school'], answerStudent['school'] === student['school']]}
-                    sameWeaponType={[student['weaponType'], answerStudent['weaponType'] === student['weaponType']]}
+                    samePositionType={[student['positionType'], answerStudent['positionType'] === student['positionType']]}
                 />
             })
         }

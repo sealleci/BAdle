@@ -31,6 +31,8 @@ export default function RightAside() {
                     onBlur={() => { setIsFocus(false) }}
                     radius='full'
                     placeholder='搜索学生'
+                    autoFocus={false}
+                    tabIndex={-1}
                     style={{
                         width: '100%'
                     }}

@@ -1,3 +1,4 @@
+@use "../../sass/general" as g;
 @use "sass:map";
 
 $size-start-index: 3;
@@ -73,6 +74,19 @@ $index-by-type: (
 
     &.flip-card--correct {
         background-color: var(--green-5);
+    }
+
+    @media screen and (max-width: g.$small-screen-width) {
+        height: 3.25rem !important;
+        width: 3.25rem !important;
+
+        span {
+            font-size: .75rem !important;
+        }
+
+        .type-dots {
+            display: none !important;
+        }
     }
 
     span {

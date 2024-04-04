@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "tsc main.ts --target ESNext --esModuleInterop --module ESNext --moduleResolution bundler",
+    "build": "bunx --bun tsc main.ts --target ESNext --esModuleInterop --module ESNext --moduleResolution bundler",
     "start": "node main.js"
   },
   "dependencies": {
