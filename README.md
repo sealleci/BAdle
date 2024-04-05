@@ -26,7 +26,7 @@ A simple wordle game featured [Blue Archive](https://www.youtube.com/channel/UCs
 - Arona and Prana
 - Cookie storage
 - Daily mode and Endless modes
-- Long list optimization
 - Filter sort list
-- Change weapon type to position type
+- Memory scroll position in search list
+- Extend to 6 properties
 - Mobile layout, Portal

@@ -1,15 +1,20 @@
 @use '../../sass/general' as g;
 
-.stage-banner {
-    margin-right: 1rem;
-    width: calc(420px - 1rem);
+.stage__banner {
+    height: g.$stage-banner-height;
+    width: calc(g.$stage-main-width - g.$stage-scroll-bar-width);
+    margin-right: g.$stage-scroll-bar-width;
 
-    &__round {
+    @media screen and (max-width: g.$small-screen-width) {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    &__default-text {
         user-select: none;
     }
 
-    @media screen and (max-width: g.$small-screen-width) {
-        margin-right: 0 !important;
-        width: calc(100% - .5rem) !important;
+    &__round {
+        user-select: none;
     }
 }

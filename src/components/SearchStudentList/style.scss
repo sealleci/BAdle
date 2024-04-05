@@ -1,10 +1,15 @@
 @use "../../sass/general" as g;
 
 $transition-duration: 0.2s;
+$margin-bottom: .125rem;
 
-.search-student-item {
-    margin-right: 1rem;
-    margin-bottom: .125rem;
+.rt-ScrollAreaRoot.search-student-list {
+    height: calc(100% - g.$right-aside-search-bar-height - $margin-bottom);
+    width: 100%;
+}
+
+.search-student-list__item {
+    margin: 0 1rem $margin-bottom 0;
     transition: background-color $transition-duration;
 
     &__select-btn.rt-BaseButton {
@@ -12,7 +17,7 @@ $transition-duration: 0.2s;
         transition: opacity $transition-duration;
 
         @media screen and (max-width: g.$small-screen-width) {
-            opacity: 1 !important;
+            opacity: 1;
         }
     }
 
@@ -23,7 +28,7 @@ $transition-duration: 0.2s;
     &:hover {
         background-color: var(--gray-4);
 
-        .search-student-item__select-btn.rt-BaseButton {
+        .search-student-list__item__select-btn.rt-BaseButton {
             opacity: 1;
         }
     }

@@ -1,10 +1,56 @@
 @use '../../sass/general' as g;
 
 .right-aside {
-    padding: .25rem;
-    width: 320px;
+    width: 20rem;
+    height: 100%;
+    padding: g.$container-padding;
 
     @media screen and (max-width: g.$small-screen-width) {
-        display: none !important;
+        height: 100dvh;
+        width: 100%;
+        padding: 0;
+    }
+
+    &__main {
+        height: 100%;
+        width: 100%;
+
+        @media screen and (max-width: g.$small-screen-width) {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &>.rt-ContainerInner {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__search-bar.rt-TextFieldRoot {
+        height: g.$right-aside-search-bar-height;
+        width: 100%;
+    }
+}
+
+.rt-DialogScroll {
+    height: 100dvh;
+    width: 100dvw;
+
+    .rt-DialogScrollPadding {
+        height: 100%;
+        width: 100%;
+        padding: 0 0 0 25% !important;
+
+        .rt-DialogContent {
+            $radius: .5rem;
+
+            height: 100%;
+            width: 100%;
+            padding: 0 !important;
+            border-radius: $radius 0 0 $radius;
+        }
     }
 }

@@ -1,6 +1,8 @@
 @use "../../sass/general" as g;
 @use "sass:map";
 
+$card-size: 4rem;
+$card-size--small: 3.25rem;
 $size-start-index: 3;
 $size-end-index: 8;
 $sequence-start-index: 1;
@@ -50,6 +52,20 @@ $index-by-type: (
     }
 }
 
+@mixin base-card {
+    height: $card-size;
+    width: $card-size;
+    animation-timing-function: linear;
+    animation-duration: $animation-duration;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @media screen and (max-width: g.$small-screen-width) {
+        height: $card-size--small;
+        width: $card-size--small;
+    }
+}
+
 .rt-Box.flip-card-wrapper {
     display: flex;
     position: relative;
@@ -63,30 +79,16 @@ $index-by-type: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 4rem;
     background-color: var(--pink-5);
     animation-name: flip;
-    animation-timing-function: linear;
-    animation-duration: $animation-duration;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     z-index: 100;
+
+    @include base-card;
+
+
 
     &.flip-card--correct {
         background-color: var(--green-5);
-    }
-
-    @media screen and (max-width: g.$small-screen-width) {
-        height: 3.25rem !important;
-        width: 3.25rem !important;
-
-        span {
-            font-size: .75rem !important;
-        }
-
-        .type-dots {
-            display: none !important;
-        }
     }
 
     span {
@@ -95,80 +97,96 @@ $index-by-type: (
     }
 
     img {
-        width: 80%;
+        width: 90%;
         filter: brightness(.3);
         user-select: none;
     }
 
-    .type-dots {
-        display: flex;
-        position: absolute;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        bottom: .33rem;
-        left: 0;
+    .prop-text {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, .7);
+        white-space: pre-wrap;
 
-        span {
-            $dot-size: .25rem;
-
-            display: inline-block;
-            position: relative;
-            height: $dot-size;
-            width: $dot-size;
-            margin: 0 3px;
-            border-radius: 50%;
-            background-color: white;
-            outline: 1px solid var(--gray-8);
+        &.armor-text {
+            font-size: .8rem;
         }
-    }
 
-    @for $i from $size-start-index through $size-end-index {
-        &.flip-card--w#{$i} {
-            width: #{$i}rem;
+        &.position-text {
+            font-size: .8rem;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: g.$small-screen-width) {
+
+            &.damage-text,
+            &.armor-text {
+                font-size: .75rem;
+            }
+
+            &.position-text {
+                font-size: .6rem;
+            }
         }
     }
 
     @for $i from $sequence-start-index through $sequence-end-index {
-        &.flip-card--s#{$i} {
+        &.flip-card--s-#{$i} {
             animation-delay: calc($animation-duration * ($i - 1));
         }
     }
 
-    @each $color in map.keys($index-by-type) {
-        &.flip-card--#{$color}>.type-dots>span:nth-child(#{map.get($index-by-type, $color)}) {
-            background-color: var(--gray-8);
-        }
-    }
+    // @for $i from $size-start-index through $size-end-index {
+    //     &.flip-card--w#{$i} {
+    //         width: #{$i}rem;
+    //     }
+    // }
+
+    // @each $color in map.keys($index-by-type) {
+    //     &.flip-card--t-#{$color}>.type-dots>span:nth-child(#{map.get($index-by-type, $color)}) {
+    //         background-color: var(--gray-8);
+    //     }
+    // }
+
+    // .type-dots {
+    //     display: flex;
+    //     position: absolute;
+    //     flex-direction: row;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100%;
+    //     bottom: .33rem;
+    //     left: 0;
+    //     span {
+    //         $dot-size: .25rem;
+    //         display: inline-block;
+    //         position: relative;
+    //         height: $dot-size;
+    //         width: $dot-size;
+    //         margin: 0 3px;
+    //         border-radius: 50%;
+    //         background-color: white;
+    //         outline: 1px solid var(--gray-8);
+    //     }
+    // }
 }
 
 .rt-BaseCard.flip-card-back {
     position: absolute;
-    height: 4rem;
     background-color: white;
-    visibility: visible;
     animation-name: back-flip;
-    animation-timing-function: linear;
-    animation-duration: $animation-duration;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     z-index: 200;
 
-    @media screen and (max-width: g.$small-screen-width) {
-        height: 3.25rem !important;
-        width: 3.25rem !important;
-    }
-
-    @for $i from $size-start-index through $size-end-index {
-        &.flip-card-back--w#{$i} {
-            width: #{$i}rem;
-        }
-    }
+    @include base-card;
 
     @for $i from $sequence-start-index through $sequence-end-index {
-        &.flip-card-back--s#{$i} {
+        &.flip-card-back--s-#{$i} {
             animation-delay: calc($animation-duration * ($i - 1));
         }
     }
+
+    // @for $i from $size-start-index through $size-end-index {
+    //     &.flip-card-back--w#{$i} {
+    //         width: #{$i}rem;
+    //     }
+    // }
 }

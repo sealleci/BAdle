@@ -101,6 +101,7 @@ const Stage = observer(() => {
             <SelectedStudentList
                 selectedStudentItemList={selectedStudentItemList.current}
                 answerStudent={studentData['students'][answerStudentId.current]}
+                isGameFinished={isGameFinished}
             />
         </Flex>
     </Container>

@@ -1,40 +1,17 @@
 @use '../../sass/general' as g;
 
-.selected-student-list {
-    height: calc(100% - 8.5rem) !important;
-    width: 420px !important;
+$list-margin: .25rem;
+
+.rt-ScrollAreaRoot.selected-student-list {
+    height: calc(100% - g.$stage-banner-height - $list-margin);
+    width: g.$stage-main-width;
 
     @media screen and (max-width: g.$small-screen-width) {
-        margin-right: 0 !important;
-        width: 100% !important;
-
-        &__item {
-            margin: 0 .25rem .25rem .25rem !important;
-            width: calc(100% - .5rem) !important;
-
-            &:last-child {
-                margin-bottom: 3rem !important;
-            }
-        }
+        margin-right: 0;
+        width: 100%;
     }
 
-    &__item {
-        margin-right: 1rem;
-        margin-bottom: .25rem;
-    }
-}
-
-.prop-text {
-    font-size: 1rem;
-    color: rgba(0, 0, 0, .7);
-    white-space: pre-wrap;
-
-    &.armor-text {
-        font-size: .8rem;
-    }
-
-    &.position-text {
-        font-size: .8rem;
-        font-weight: bold;
+    .selected-student-list__item {
+        margin: 0 g.$stage-scroll-bar-width $list-margin 0;
     }
 }

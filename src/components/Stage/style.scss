@@ -1,7 +1,7 @@
 @use '../../sass/general' as g;
 
 .rt-Container.stage {
-    padding: .25rem;
+    padding: g.$container-padding;
 
     @media screen and (max-width: g.$small-screen-width) {
         height: 100dvh;

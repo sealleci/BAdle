@@ -11,12 +11,11 @@ interface StageBannerProps {
 }
 
 export default function StageBanner({ curRound, totalRounds, answerStudentAvatarUrl, answerStudentFullName, answerStudentVariant }: StageBannerProps) {
+    const DEFAULT_TEXT: string = '猜测学生档案'
+
     return <Card
         size='1'
-        className='stage-banner'
-        style={{
-            height: '8.25rem'
-        }}
+        className='stage__banner'
     >
         <Flex
             direction='column'
@@ -37,7 +36,9 @@ export default function StageBanner({ curRound, totalRounds, answerStudentAvatar
                     size='5'
                     draggable={false}
                 ></Avatar>
-                <Text>{answerStudentFullName === '' ? '猜测学生档案' : answerStudentFullName}
+                <Text
+                    className={answerStudentFullName === '' ? 'stage__banner__default-text' : ''}
+                >{answerStudentFullName === '' ? DEFAULT_TEXT : answerStudentFullName}
                     {answerStudentVariant !== '' && <Text
                         className='variant-name'
                     >{answerStudentVariant}</Text>}
@@ -51,7 +52,7 @@ export default function StageBanner({ curRound, totalRounds, answerStudentAvatar
                 width='100%'
             >
                 <Box
-                    className='stage-banner__round'
+                    className='stage__banner__round'
                 >
                     <Text>次数：</Text>
                     <Text>{curRound}</Text>

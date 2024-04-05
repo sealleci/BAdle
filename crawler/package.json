@@ -1,13 +1,13 @@
 {
   "name": "crawler",
   "version": "0.0.1",
-  "type": "module",
+  "dependencies": {
+    "@crawlee/playwright": "^3.8.2",
+    "playwright": "^1.42.1"
+  },
   "scripts": {
     "build": "bunx --bun tsc main.ts --target ESNext --esModuleInterop --module ESNext --moduleResolution bundler",
     "start": "node main.js"
   },
-  "dependencies": {
-    "@crawlee/playwright": "^3.8.2",
-    "playwright": "^1.42.1"
-  }
+  "type": "module"
 }
