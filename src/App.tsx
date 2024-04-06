@@ -1,8 +1,8 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Flex } from '@radix-ui/themes'
 import DataContext from './contexts/data.ts'
 import languageStore from './stores/language.ts'
-import widthStore from './stores/width.ts'
+import sizeStore from './stores/size.ts'
 import type { StudentDataType } from './types/student.ts'
 import LeftAside from './components/LeftAside'
 import Stage from './components/Stage'
@@ -13,17 +13,23 @@ import studentData from './assets/data/students.json'
 
 function App() {
   const SMALL_SCREEN_THRESHOLD: number = 640
+  const [prevWindowHeight, setPrevWindowHeight] = useState<number>(window.innerHeight)
 
   const handleResize = useCallback(() => {
-    widthStore.setIsSmallScreen(window.innerWidth <= SMALL_SCREEN_THRESHOLD)
-  }, [])
+    sizeStore.setIsSmallScreen(window.innerWidth <= SMALL_SCREEN_THRESHOLD)
+
+    if (window.innerHeight !== prevWindowHeight) {
+      sizeStore.setIsHeightChanged(true)
+      setPrevWindowHeight(window.innerHeight)
+    }
+  }, [prevWindowHeight])
 
   useEffect(() => {
     languageStore.setLanguage('zh_cn')
   }, [])
 
   useEffect(() => {
-    widthStore.setIsSmallScreen(window.innerWidth <= SMALL_SCREEN_THRESHOLD)
+    sizeStore.setIsSmallScreen(window.innerWidth <= SMALL_SCREEN_THRESHOLD)
     window.addEventListener('resize', handleResize)
 
     return () => {

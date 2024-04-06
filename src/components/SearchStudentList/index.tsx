@@ -5,7 +5,7 @@ import dialogStore from '../../stores/dialog.ts'
 import languageStore from '../../stores/language.ts'
 import scrollStore from '../../stores/scroll.ts'
 import selectStore from '../../stores/select.ts'
-import widthStore from '../../stores/width.ts'
+import sizeStore from '../../stores/size.ts'
 import DataContext from '../../contexts/data.ts'
 import type { LanguageType } from '../../types/language.ts'
 import type { StudentItem } from '../../types/student.ts'
@@ -31,7 +31,7 @@ const SearchStudentItem = memo(({ studentId: id, abbrevName, variant, avatarUrl 
     const handleClick = useCallback(() => autorun(() => {
         selectStore.setStudentId(id)
 
-        if (widthStore.isSmallScreen) {
+        if (sizeStore.isSmallScreen) {
             dialogStore.setIsOpen(false)
         }
     }), [id])
@@ -139,23 +139,25 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
         }
     }), [searchPrompt, filteredStudents])
 
+    const getCurEndIndex = useCallback(() => {
+        const minListLength = Math.min(
+            scrollAreaRef.current === null
+                ? 1
+                : Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT)
+            , filteredStudents.length)
+        return Math.min(
+            scrollAreaRef.current === null
+                ? scrollStore.startIndex + 1
+                : (scrollStore.endIndex - scrollStore.startIndex + 1) - (scrollStore.scrollTop % ITEM_HEIGHT) < scrollAreaRef.current.scrollHeight
+                    ? scrollStore.startIndex + minListLength + (scrollStore.scrollTop <= scrollStore.startIndex * ITEM_HEIGHT ? -1 : 0)
+                    : scrollStore.endIndex
+            , filteredStudents.length - 1)
+    }, [filteredStudents])
+
     useEffect(() => autorun(() => {
         if (searchPrompt.trim() === '') {
-            const minListLength = Math.min(
-                scrollAreaRef.current === null
-                    ? 1
-                    : Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT)
-                , filteredStudents.length)
-            const curEndIndex = Math.min(
-                scrollAreaRef.current === null
-                    ? scrollStore.startIndex + 1
-                    : (scrollStore.endIndex - scrollStore.startIndex + 1) < minListLength
-                        ? scrollStore.startIndex + minListLength - 1
-                        : scrollStore.endIndex
-                , filteredStudents.length - 1)
-
             setStartIndex(scrollStore.startIndex)
-            setEndIndex(curEndIndex)
+            setEndIndex(getCurEndIndex())
             setTopBlankHeight(scrollStore.startIndex * ITEM_HEIGHT)
             setBottomBlankHeight((filteredStudents.length - 1 - scrollStore.endIndex) * ITEM_HEIGHT)
             setCurScrollTop(scrollStore.scrollTop)
@@ -169,7 +171,7 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
             setTopBlankHeight(0)
             setBottomBlankHeight((filteredStudents.length - 1 - curEndIndex) * ITEM_HEIGHT)
         }
-    }), [searchPrompt, filteredStudents])
+    }), [searchPrompt, getCurEndIndex, filteredStudents])
 
     useEffect(() => {
         async function waitForElementUpdate() {
@@ -195,6 +197,28 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
 
         waitForElementUpdate()
     }, [searchPrompt, curScrollTop, prevSearchPrompt])
+
+    useEffect(() => autorun(() => {
+        if (!(sizeStore.isHeightChanged)) {
+            return
+        }
+
+        if (scrollAreaRef.current === null) {
+            return
+        }
+
+        if (searchPrompt.trim() === '') {
+            scrollStore.setEndIndex(getCurEndIndex())
+        } else {
+            setEndIndex(Math.min(
+                startIndex + Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT) + (scrollAreaRef.current.scrollTop <= startIndex * ITEM_HEIGHT
+                    ? -1
+                    : 0),
+                filteredStudents.length - 1))
+        }
+
+        sizeStore.setIsHeightChanged(false)
+    }), [searchPrompt, getCurEndIndex, startIndex, filteredStudents])
 
     return <ScrollArea
         type='auto'

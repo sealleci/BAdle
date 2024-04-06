@@ -3,7 +3,7 @@ import type { FormEvent } from 'react'
 import { autorun } from 'mobx'
 import { Card, Container, Dialog, Flex, TextField } from '@radix-ui/themes'
 import dialogStore from '../../stores/dialog'
-import widthStore from '../../stores/width'
+import sizeStore from '../../stores/size'
 import SearchStudentList from '../SearchStudentList'
 import './style.scss'
 
@@ -60,7 +60,7 @@ export default function RightAside() {
     }, [])
 
     useEffect(() => autorun(() => {
-        setIsSmallScreen(widthStore.isSmallScreen)
+        setIsSmallScreen(sizeStore.isSmallScreen)
     }), [])
 
     useEffect(() => autorun(() => {
