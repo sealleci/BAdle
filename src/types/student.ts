@@ -1,4 +1,4 @@
-import type { LanguageType } from "./language"
+import type { LanguageType } from './language'
 
 type DamageType = 'explosive' | 'piercing' | 'mystic' | 'sonic'
 type ArmorType = 'light' | 'heavy' | 'special' | 'elastic'

@@ -16,7 +16,7 @@ const Stage = observer(() => {
     const [curRound, setCurRound] = useState<number>(0)
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false)
     const answerStudentId = useRef<string>('')
-    const selectedStudentItemList = useRef<StudentItem[]>([])
+    const [selectedStudentItemList, setSelectedStudentItemList] = useState<StudentItem[]>([])
     const selectedStudentIdList = useRef<string[]>([])
     const studentData = useContext(DataContext)
 
@@ -38,7 +38,7 @@ const Stage = observer(() => {
             return
         }
 
-        selectedStudentItemList.current.push(studentData['students'][selectStore.studentId])
+        setSelectedStudentItemList(prev => [...prev, studentData['students'][selectStore.studentId]])
         selectedStudentIdList.current.push(selectStore.studentId)
         setCurRound(prev => prev + 1)
 
@@ -59,7 +59,7 @@ const Stage = observer(() => {
         }
 
         setCurRound(0)
-        selectedStudentItemList.current = []
+        setSelectedStudentItemList([])
         selectedStudentIdList.current = []
         setIsGameFinished(false)
         rollStudentId()
@@ -99,7 +99,7 @@ const Stage = observer(() => {
                     : ''}
             />
             <SelectedStudentList
-                selectedStudentItemList={selectedStudentItemList.current}
+                selectedStudentItemList={selectedStudentItemList}
                 answerStudent={studentData['students'][answerStudentId.current]}
                 isGameFinished={isGameFinished}
             />

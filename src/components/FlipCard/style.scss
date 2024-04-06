@@ -33,22 +33,24 @@ $index-by-type: (
 @keyframes back-flip {
     from {
         transform: rotateY(0deg);
-        visibility: visible;
+        display: block;
     }
 
     50% {
         transform: rotateY(-90deg);
-        visibility: visible;
+        display: block;
     }
 
     51% {
         transform: rotateY(-90deg);
         visibility: hidden;
+        display: none;
     }
 
     to {
         transform: rotateY(-90deg);
         visibility: hidden;
+        display: none;
     }
 }
 
@@ -84,8 +86,6 @@ $index-by-type: (
     z-index: 100;
 
     @include base-card;
-
-
 
     &.flip-card--correct {
         background-color: var(--green-5);

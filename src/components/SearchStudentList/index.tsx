@@ -1,12 +1,15 @@
 import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
+import { autorun } from 'mobx'
 import { Avatar, Card, Flex, IconButton, ScrollArea, Text } from '@radix-ui/themes'
-import DataContext from '../../contexts/data.ts'
 import dialogStore from '../../stores/dialog.ts'
 import languageStore from '../../stores/language.ts'
 import scrollStore from '../../stores/scroll.ts'
 import selectStore from '../../stores/select.ts'
+import widthStore from '../../stores/width.ts'
+import DataContext from '../../contexts/data.ts'
 import type { LanguageType } from '../../types/language.ts'
-import type { StudentItem, StudentDataType } from '../../types/student.ts'
+import type { StudentItem } from '../../types/student.ts'
+import { sleep } from '../../utils/time.ts'
 import './style.scss'
 
 interface SearchStudentItemProps {
@@ -18,16 +21,20 @@ interface SearchStudentItemProps {
 
 interface SearchStudentListProps {
     searchPrompt: string
-    isFocus: boolean
+}
+
+interface BlankItemProps {
+    height: number
 }
 
 const SearchStudentItem = memo(({ studentId: id, abbrevName, variant, avatarUrl }: SearchStudentItemProps) => {
-    const handleClick = useCallback(() => {
+    const handleClick = useCallback(() => autorun(() => {
         selectStore.setStudentId(id)
-        if (window.innerWidth < 640) {
+
+        if (widthStore.isSmallScreen) {
             dialogStore.setIsOpen(false)
         }
-    }, [id])
+    }), [id])
 
     return <Card
         className='search-student-list__item'
@@ -43,7 +50,7 @@ const SearchStudentItem = memo(({ studentId: id, abbrevName, variant, avatarUrl 
                 color='blue'
                 onClick={handleClick}
             >
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.85355 3.85355C7.04882 3.65829 7.04882 3.34171 6.85355 3.14645C6.65829 2.95118 6.34171 2.95118 6.14645 3.14645L2.14645 7.14645C1.95118 7.34171 1.95118 7.65829 2.14645 7.85355L6.14645 11.8536C6.34171 12.0488 6.65829 12.0488 6.85355 11.8536C7.04882 11.6583 7.04882 11.3417 6.85355 11.1464L3.20711 7.5L6.85355 3.85355ZM12.8536 3.85355C13.0488 3.65829 13.0488 3.34171 12.8536 3.14645C12.6583 2.95118 12.3417 2.95118 12.1464 3.14645L8.14645 7.14645C7.95118 7.34171 7.95118 7.65829 8.14645 7.85355L12.1464 11.8536C12.3417 12.0488 12.6583 12.0488 12.8536 11.8536C13.0488 11.6583 13.0488 11.3417 12.8536 11.1464L9.20711 7.5L12.8536 3.85355Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
+                <svg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M6.85355 3.85355C7.04882 3.65829 7.04882 3.34171 6.85355 3.14645C6.65829 2.95118 6.34171 2.95118 6.14645 3.14645L2.14645 7.14645C1.95118 7.34171 1.95118 7.65829 2.14645 7.85355L6.14645 11.8536C6.34171 12.0488 6.65829 12.0488 6.85355 11.8536C7.04882 11.6583 7.04882 11.3417 6.85355 11.1464L3.20711 7.5L6.85355 3.85355ZM12.8536 3.85355C13.0488 3.65829 13.0488 3.34171 12.8536 3.14645C12.6583 2.95118 12.3417 2.95118 12.1464 3.14645L8.14645 7.14645C7.95118 7.34171 7.95118 7.65829 8.14645 7.85355L12.1464 11.8536C12.3417 12.0488 12.6583 12.0488 12.8536 11.8536C13.0488 11.6583 13.0488 11.3417 12.8536 11.1464L9.20711 7.5L12.8536 3.85355Z' fill='currentColor' fillRule='evenodd' clipRule='evenodd'></path></svg>
             </IconButton>
             <Text className='search-student-list__item__name'>
                 {abbrevName}
@@ -62,7 +69,7 @@ const SearchStudentItem = memo(({ studentId: id, abbrevName, variant, avatarUrl 
     </Card>
 })
 
-function BlankItem({ height }: { height: number }) {
+function BlankItem({ height }: BlankItemProps) {
     return <div
         style={{
             height: `${height}px`,
@@ -71,33 +78,31 @@ function BlankItem({ height }: { height: number }) {
     ></div>
 }
 
-export default function SearchStudentList({ searchPrompt, isFocus }: SearchStudentListProps) {
-    const ITEM_HEIGHT: number = 66;
-    const scrollAreaRef = useRef<HTMLDivElement>(null)
+export default function SearchStudentList({ searchPrompt }: SearchStudentListProps) {
+    const ITEM_HEIGHT: number = 66
     const [startIndex, setStartIndex] = useState<number>(0)
     const [endIndex, setEndIndex] = useState<number>(0)
     const [topBlankHeight, setTopBlankHeight] = useState<number>(0)
     const [bottomBlankHeight, setBottomBlankHeight] = useState<number>(0)
+    const [curScrollTop, setCurScrollTop] = useState<number>(0)
+    const [prevSearchPrompt, setPrevSearchPrompt] = useState<string>('')
+    const scrollAreaRef = useRef<HTMLDivElement>(null)
     const studentData = useContext(DataContext)
     const filteredStudents = useMemo(() => {
-        return Object.entries((studentData satisfies StudentDataType)["students"]).filter(([, value]: [string, StudentItem]) => {
-            if (searchPrompt.trim() === '') {
-                if (window.innerWidth >= 640) {
-                    return !isFocus
-                } else {
-                    return true
-                }
-            }
+        if (searchPrompt.trim() === '') {
+            return Object.entries(studentData['students'])
+        }
 
+        return Object.entries(studentData['students']).filter(([, value]: [string, StudentItem]) => {
             for (const part of searchPrompt.trim().toLowerCase().split(/\s+/)) {
-                for (const key of Object.keys(value["displayName"]["full"])) {
-                    if (value["displayName"]["full"][key as LanguageType].toLowerCase().includes(part)) {
+                for (const key of Object.keys(value['displayName']['full'])) {
+                    if (value['displayName']['full'][key as LanguageType].toLowerCase().includes(part)) {
                         return true
                     }
                 }
 
-                for (const key of Object.keys(value["variant"])) {
-                    if (value["variant"][key as LanguageType].toLowerCase().includes(part)) {
+                for (const key of Object.keys(value['variant'])) {
+                    if (value['variant'][key as LanguageType].toLowerCase().includes(part)) {
                         return true
                     }
                 }
@@ -105,72 +110,91 @@ export default function SearchStudentList({ searchPrompt, isFocus }: SearchStude
 
             return false
         })
-    }, [isFocus, searchPrompt, studentData])
+    }, [searchPrompt, studentData])
 
-    const handleScroll = useCallback(() => {
+    const handleScroll = useCallback(() => autorun(async () => {
         if (scrollAreaRef.current === null) {
             return
         }
 
-        const curStartIndex = Math.floor(scrollAreaRef.current.scrollTop / ITEM_HEIGHT)
-        const curEndIndex = Math.floor((scrollAreaRef.current.scrollTop + scrollAreaRef.current.clientHeight) / ITEM_HEIGHT)
+        let curStartIndex = Math.floor(scrollAreaRef.current.scrollTop / ITEM_HEIGHT)
+        let curEndIndex = Math.ceil((scrollAreaRef.current.scrollTop + scrollAreaRef.current.clientHeight) / ITEM_HEIGHT - 1)
+        let curScrollTop = scrollAreaRef.current.scrollTop
 
-        if (searchPrompt.trim() === '') {
-            scrollStore.setScrollTop(scrollAreaRef.current.scrollTop)
-            scrollStore.setStartIndex(curStartIndex)
-            scrollStore.setEndIndex(curEndIndex)
+        if (curEndIndex >= filteredStudents.length - 1) {
+            curEndIndex = filteredStudents.length - 1
+            curStartIndex = Math.max(0, curEndIndex - Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT) + 1)
+            curScrollTop = scrollAreaRef.current.scrollHeight
         }
 
-        setStartIndex(curStartIndex)
-        setEndIndex(curEndIndex)
-        setTopBlankHeight(curStartIndex * ITEM_HEIGHT)
-        setBottomBlankHeight((filteredStudents.length - 1 - curEndIndex) * ITEM_HEIGHT)
-    }, [searchPrompt, filteredStudents])
-
-
-    useEffect(() => {
         if (searchPrompt.trim() === '') {
-            const minListLength = scrollAreaRef.current === null ? 1 : Math.min(Math.floor(scrollAreaRef.current.clientHeight / ITEM_HEIGHT), filteredStudents.length - 1)
-            const curEndIndex = (scrollAreaRef.current === null)
-                ? scrollStore.endIndex
-                : (scrollStore.endIndex - scrollStore.startIndex + 1) < minListLength
-                    ? minListLength
-                    : scrollStore.endIndex
+            scrollStore.setScrollTop(curScrollTop)
+            scrollStore.setStartIndex(curStartIndex)
+            scrollStore.setEndIndex(curEndIndex)
+        } else {
+            setStartIndex(curStartIndex)
+            setEndIndex(curEndIndex)
+            setTopBlankHeight(curStartIndex * ITEM_HEIGHT)
+            setBottomBlankHeight((filteredStudents.length - 1 - curEndIndex) * ITEM_HEIGHT)
+        }
+    }), [searchPrompt, filteredStudents])
+
+    useEffect(() => autorun(() => {
+        if (searchPrompt.trim() === '') {
+            const minListLength = Math.min(
+                scrollAreaRef.current === null
+                    ? 1
+                    : Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT)
+                , filteredStudents.length)
+            const curEndIndex = Math.min(
+                scrollAreaRef.current === null
+                    ? scrollStore.startIndex + 1
+                    : (scrollStore.endIndex - scrollStore.startIndex + 1) < minListLength
+                        ? scrollStore.startIndex + minListLength - 1
+                        : scrollStore.endIndex
+                , filteredStudents.length - 1)
 
             setStartIndex(scrollStore.startIndex)
             setEndIndex(curEndIndex)
             setTopBlankHeight(scrollStore.startIndex * ITEM_HEIGHT)
             setBottomBlankHeight((filteredStudents.length - 1 - scrollStore.endIndex) * ITEM_HEIGHT)
+            setCurScrollTop(scrollStore.scrollTop)
         } else {
             const curEndIndex = scrollAreaRef.current === null
                 ? filteredStudents.length - 1
-                : Math.min(Math.floor(scrollAreaRef.current.clientHeight / ITEM_HEIGHT), filteredStudents.length - 1)
+                : Math.min(Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT - 1), filteredStudents.length - 1)
+
             setStartIndex(0)
             setEndIndex(curEndIndex)
             setTopBlankHeight(0)
             setBottomBlankHeight((filteredStudents.length - 1 - curEndIndex) * ITEM_HEIGHT)
         }
-    }, [searchPrompt, filteredStudents])
+    }), [searchPrompt, filteredStudents])
 
     useEffect(() => {
-        if (scrollAreaRef.current === null) {
-            return
+        async function waitForElementUpdate() {
+            if (scrollAreaRef.current === null) {
+                return
+            }
+
+            if (searchPrompt.trim() === '') {
+                // FIXME: scrollHeight < scrollTop
+                if (prevSearchPrompt.trim() !== searchPrompt.trim()) {
+                    while (scrollAreaRef.current.scrollHeight < scrollStore.scrollTop) {
+                        await sleep(16)
+                    }
+                }
+
+                scrollAreaRef.current.scrollTop = curScrollTop
+            } else {
+                scrollAreaRef.current.scrollTop = 0
+            }
+
+            setPrevSearchPrompt(searchPrompt)
         }
 
-        if (searchPrompt.trim() === '') {
-            scrollAreaRef.current.scrollTop = scrollStore.scrollTop
-        }
-    })
-
-    useEffect(() => {
-        if (scrollAreaRef.current === null) {
-            return
-        }
-
-        if (searchPrompt.trim() !== '') {
-            scrollAreaRef.current.scrollTop = 0
-        }
-    }, [searchPrompt])
+        waitForElementUpdate()
+    }, [searchPrompt, curScrollTop, prevSearchPrompt])
 
     return <ScrollArea
         type='auto'

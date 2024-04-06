@@ -13,5 +13,17 @@ $list-margin: .25rem;
 
     .selected-student-list__item {
         margin: 0 g.$stage-scroll-bar-width $list-margin 0;
+
+        &__name {
+            font-size: 1rem;
+
+            @media screen and (max-width: g.$small-screen-width) {
+                font-size: .8rem;
+            }
+        }
     }
+}
+
+.adding-student-item {
+    height: 3.5rem;
 }
