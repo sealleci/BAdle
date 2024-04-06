@@ -9,7 +9,6 @@ import sizeStore from '../../stores/size.ts'
 import DataContext from '../../contexts/data.ts'
 import type { LanguageType } from '../../types/language.ts'
 import type { StudentItem } from '../../types/student.ts'
-import { sleep } from '../../utils/time.ts'
 import './style.scss'
 
 interface SearchStudentItemProps {
@@ -86,7 +85,8 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
     const [bottomBlankHeight, setBottomBlankHeight] = useState<number>(0)
     const [curScrollTop, setCurScrollTop] = useState<number>(0)
     const [prevSearchPrompt, setPrevSearchPrompt] = useState<string>('')
-    const scrollAreaRef = useRef<HTMLDivElement>(null)
+    const [curScrollHeight, setCurScrollHeight] = useState<number>(0)
+    const scrollAreaRef = useRef<HTMLDivElement | null>(null)
     const studentData = useContext(DataContext)
     const filteredStudents = useMemo(() => {
         if (searchPrompt.trim() === '') {
@@ -112,7 +112,13 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
         })
     }, [searchPrompt, studentData])
 
-    const handleScroll = useCallback(() => autorun(async () => {
+    // XXX: do not wrap it by useCallback
+    function handleRef(newRef: HTMLDivElement | null) {
+        scrollAreaRef.current = newRef
+        setCurScrollHeight(newRef === null ? 0 : newRef.scrollHeight)
+    }
+
+    const handleScroll = useCallback(() => {
         if (scrollAreaRef.current === null) {
             return
         }
@@ -128,6 +134,10 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
         }
 
         if (searchPrompt.trim() === '') {
+            if (curScrollHeight < scrollStore.scrollTop) {
+                return
+            }
+
             scrollStore.setScrollTop(curScrollTop)
             scrollStore.setStartIndex(curStartIndex)
             scrollStore.setEndIndex(curEndIndex)
@@ -137,7 +147,7 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
             setTopBlankHeight(curStartIndex * ITEM_HEIGHT)
             setBottomBlankHeight((filteredStudents.length - 1 - curEndIndex) * ITEM_HEIGHT)
         }
-    }), [searchPrompt, filteredStudents])
+    }, [searchPrompt, filteredStudents, curScrollHeight])
 
     const getCurEndIndex = useCallback(() => {
         const minListLength = Math.min(
@@ -153,6 +163,7 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
                     : scrollStore.endIndex
             , filteredStudents.length - 1)
     }, [filteredStudents])
+
 
     useEffect(() => autorun(() => {
         if (searchPrompt.trim() === '') {
@@ -174,29 +185,28 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
     }), [searchPrompt, getCurEndIndex, filteredStudents])
 
     useEffect(() => {
-        async function waitForElementUpdate() {
-            if (scrollAreaRef.current === null) {
+        if (scrollAreaRef.current === null) {
+            return
+        }
+
+        if (searchPrompt.trim() === '') {
+            if (curScrollHeight < scrollStore.scrollTop) {
                 return
             }
 
-            if (searchPrompt.trim() === '') {
-                // FIXME: scrollHeight < scrollTop
-                if (prevSearchPrompt.trim() !== searchPrompt.trim()) {
-                    while (scrollAreaRef.current.scrollHeight < scrollStore.scrollTop) {
-                        await sleep(16)
-                    }
-                }
+            scrollAreaRef.current.scrollTop = curScrollTop
+            handleScroll()
 
-                scrollAreaRef.current.scrollTop = curScrollTop
-            } else {
-                scrollAreaRef.current.scrollTop = 0
+            if (prevSearchPrompt.trim() !== searchPrompt.trim()) {
+                setPrevSearchPrompt(searchPrompt)
             }
-
-            setPrevSearchPrompt(searchPrompt)
+        } else {
+            if (prevSearchPrompt.trim() !== searchPrompt.trim()) {
+                scrollAreaRef.current.scrollTop = 0
+                setPrevSearchPrompt(searchPrompt)
+            }
         }
-
-        waitForElementUpdate()
-    }, [searchPrompt, curScrollTop, prevSearchPrompt])
+    }, [searchPrompt, curScrollTop, prevSearchPrompt, curScrollHeight, handleScroll])
 
     useEffect(() => autorun(() => {
         if (!(sizeStore.isHeightChanged)) {
@@ -226,7 +236,7 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
         size='2'
         className='search-student-list'
         onScroll={handleScroll}
-        ref={scrollAreaRef}
+        ref={handleRef}
     >
         <BlankItem
             height={topBlankHeight}
