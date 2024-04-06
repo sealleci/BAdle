@@ -1,5 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { autorun } from 'mobx'
+import { observer } from 'mobx-react-lite'
 import { Avatar, Card, Flex, IconButton, ScrollArea, Text } from '@radix-ui/themes'
 import dialogStore from '../../stores/dialog.ts'
 import languageStore from '../../stores/language.ts'
@@ -47,7 +48,7 @@ const AddingStudentItem = memo(() => {
 
 })
 
-const SelectedStudentItem = memo(({
+const SelectedStudentItem = observer(({
     avatarUrl,
     fullName,
     isSameArmorType,
@@ -158,7 +159,7 @@ const SelectedStudentItem = memo(({
     </Card>
 })
 
-function SelectedStudentList({ selectedStudentItemList, answerStudent, isGameFinished }: SelectedStudentListProps) {
+const SelectedStudentList = observer(({ selectedStudentItemList, answerStudent, isGameFinished }: SelectedStudentListProps) => {
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
     const scrollAreaRef = useRef<HTMLDivElement>(null)
 
@@ -199,6 +200,6 @@ function SelectedStudentList({ selectedStudentItemList, answerStudent, isGameFin
         }
         {(!isGameFinished && isSmallScreen) && <AddingStudentItem />}
     </ScrollArea>
-}
+})
 
 export default SelectedStudentList

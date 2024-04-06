@@ -1,5 +1,6 @@
-import { memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { autorun } from 'mobx'
+import { observer } from 'mobx-react-lite'
 import { Avatar, Card, Flex, IconButton, ScrollArea, Text } from '@radix-ui/themes'
 import dialogStore from '../../stores/dialog.ts'
 import languageStore from '../../stores/language.ts'
@@ -26,7 +27,7 @@ interface BlankItemProps {
     height: number
 }
 
-const SearchStudentItem = memo(({ studentId: id, abbrevName, variant, avatarUrl }: SearchStudentItemProps) => {
+const SearchStudentItem = observer(({ studentId: id, abbrevName, variant, avatarUrl }: SearchStudentItemProps) => {
     const handleClick = useCallback(() => autorun(() => {
         selectStore.setStudentId(id)
 
@@ -77,7 +78,7 @@ function BlankItem({ height }: BlankItemProps) {
     ></div>
 }
 
-export default function SearchStudentList({ searchPrompt }: SearchStudentListProps) {
+const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) => {
     const ITEM_HEIGHT: number = 66
     const [startIndex, setStartIndex] = useState<number>(0)
     const [endIndex, setEndIndex] = useState<number>(0)
@@ -260,4 +261,6 @@ export default function SearchStudentList({ searchPrompt }: SearchStudentListPro
             height={bottomBlankHeight}
         />
     </ScrollArea>
-}
+})
+
+export default SearchStudentList

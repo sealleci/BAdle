@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { autorun } from 'mobx'
+import { observer } from 'mobx-react-lite'
 import { Card, Container, Dialog, Flex, TextField } from '@radix-ui/themes'
 import dialogStore from '../../stores/dialog'
 import sizeStore from '../../stores/size'
@@ -50,7 +51,7 @@ function RightAsideMain() {
     </Container>
 }
 
-export default function RightAside() {
+const RightAside = observer(() => {
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
 
@@ -77,4 +78,6 @@ export default function RightAside() {
     }
 
     return <RightAsideMain />
-}
+})
+
+export default RightAside
