@@ -24,7 +24,7 @@ interface SelectedStudentItemProps {
 
 interface SelectedStudentListProps {
     selectedStudentItemList: StudentItem[]
-    answerStudent: StudentItem
+    answerStudent: StudentItem | null
     isGameFinished: boolean
 }
 
@@ -190,11 +190,26 @@ const SelectedStudentList = observer(({ selectedStudentItemList, answerStudent, 
                     variant={languageStore.language in student['variant']
                         ? student['variant'][languageStore.language]
                         : ''}
-                    isSameArmorType={[student['armorType'], answerStudent['armorType'] === student['armorType']]}
-                    isSameDamageType={[student['damageType'], answerStudent['damageType'] === student['damageType']]}
-                    isSameRole={[student['role'], answerStudent['role'] === student['role']]}
-                    isSameSchool={[student['school'], answerStudent['school'] === student['school']]}
-                    isSamePositionType={[student['positionType'], answerStudent['positionType'] === student['positionType']]}
+                    isSameArmorType={[
+                        student['armorType'],
+                        answerStudent !== null
+                        && answerStudent['armorType'] === student['armorType']]}
+                    isSameDamageType={[
+                        student['damageType'],
+                        answerStudent !== null
+                        && answerStudent['damageType'] === student['damageType']]}
+                    isSameRole={[
+                        student['role'],
+                        answerStudent !== null
+                        && answerStudent['role'] === student['role']]}
+                    isSameSchool={[
+                        student['school'],
+                        answerStudent !== null
+                        && answerStudent['school'] === student['school']]}
+                    isSamePositionType={[
+                        student['positionType'],
+                        answerStudent !== null
+                        && answerStudent['positionType'] === student['positionType']]}
                 />
             })
         }

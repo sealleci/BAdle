@@ -8,6 +8,7 @@ type WeaponType = 'sg' | 'smg' | 'ar' | 'gl' | 'hg' | 'rl' | 'sr' | 'rg' | 'mg' 
 type PositionType = 'front' | 'middle' | 'back'
 
 interface StudentItem {
+    id: string
     displayName: {
         full: Record<LanguageType, string>
         abbrev: Record<LanguageType, string>
@@ -23,7 +24,7 @@ interface StudentItem {
 }
 
 interface StudentDataType {
-    students: Record<string, StudentItem>
+    students: StudentItem[]
 }
 
 export type {

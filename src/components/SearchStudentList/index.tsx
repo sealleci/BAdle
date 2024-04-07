@@ -27,14 +27,14 @@ interface BlankItemProps {
     height: number
 }
 
-const SearchStudentItem = observer(({ studentId: id, abbrevName, variant, avatarUrl }: SearchStudentItemProps) => {
+const SearchStudentItem = observer(({ studentId, abbrevName, variant, avatarUrl }: SearchStudentItemProps) => {
     const handleClick = useCallback(() => autorun(() => {
-        selectStore.setStudentId(id)
+        selectStore.setStudentId(studentId)
 
         if (sizeStore.isSmallScreen) {
             dialogStore.setIsOpen(false)
         }
-    }), [id])
+    }), [studentId])
 
     return <Card
         className='search-student-list__item'
@@ -87,14 +87,15 @@ const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) =>
     const [curScrollTop, setCurScrollTop] = useState<number>(0)
     const [prevSearchPrompt, setPrevSearchPrompt] = useState<string>('')
     const [curScrollHeight, setCurScrollHeight] = useState<number>(0)
+    const [isWaitingForRef, setIsWaitingForRef] = useState<boolean>(false)
     const scrollAreaRef = useRef<HTMLDivElement | null>(null)
     const studentData = useContext(DataContext)
     const filteredStudents = useMemo(() => {
         if (searchPrompt.trim() === '') {
-            return Object.entries(studentData['students'])
+            return studentData['students']
         }
 
-        return Object.entries(studentData['students']).filter(([, value]: [string, StudentItem]) => {
+        return studentData['students'].filter((value: StudentItem) => {
             for (const part of searchPrompt.trim().toLowerCase().split(/\s+/)) {
                 for (const key of Object.keys(value['displayName']['full'])) {
                     if (value['displayName']['full'][key as LanguageType].toLowerCase().includes(part)) {
@@ -131,11 +132,12 @@ const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) =>
         if (curEndIndex >= filteredStudents.length - 1) {
             curEndIndex = filteredStudents.length - 1
             curStartIndex = Math.max(0, curEndIndex - Math.ceil(scrollAreaRef.current.clientHeight / ITEM_HEIGHT) + 1)
-            curScrollTop = scrollAreaRef.current.scrollHeight
+            curScrollTop = curStartIndex * ITEM_HEIGHT + ITEM_HEIGHT - (scrollAreaRef.current.clientHeight % ITEM_HEIGHT)
         }
 
         if (searchPrompt.trim() === '') {
             if (curScrollHeight < scrollStore.scrollTop) {
+                setIsWaitingForRef(true)
                 return
             }
 
@@ -196,7 +198,11 @@ const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) =>
             }
 
             scrollAreaRef.current.scrollTop = curScrollTop
-            handleScroll()
+
+            if (isWaitingForRef) {
+                handleScroll()
+                setIsWaitingForRef(false)
+            }
 
             if (prevSearchPrompt.trim() !== searchPrompt.trim()) {
                 setPrevSearchPrompt(searchPrompt)
@@ -207,7 +213,7 @@ const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) =>
                 setPrevSearchPrompt(searchPrompt)
             }
         }
-    }, [searchPrompt, curScrollTop, prevSearchPrompt, curScrollHeight, handleScroll])
+    }, [searchPrompt, curScrollTop, prevSearchPrompt, curScrollHeight, handleScroll, isWaitingForRef])
 
     useEffect(() => autorun(() => {
         if (!(sizeStore.isHeightChanged)) {
@@ -243,10 +249,10 @@ const SearchStudentList = observer(({ searchPrompt }: SearchStudentListProps) =>
             height={topBlankHeight}
         />
         {
-            filteredStudents.slice(startIndex, endIndex + 1).map(([key, value]: [string, StudentItem]) => {
+            filteredStudents.slice(startIndex, endIndex + 1).map((value: StudentItem) => {
                 return <SearchStudentItem
-                    key={key}
-                    studentId={key}
+                    key={value['id']}
+                    studentId={value['id']}
                     abbrevName={languageStore.language in value['displayName']['abbrev']
                         ? value['displayName']['abbrev'][languageStore.language]
                         : ''}

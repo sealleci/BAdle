@@ -15,14 +15,12 @@ const Stage = observer(() => {
     const totalRounds: number = 6
     const [curRound, setCurRound] = useState<number>(0)
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false)
-    const answerStudentId = useRef<string>('')
     const [selectedStudentItemList, setSelectedStudentItemList] = useState<StudentItem[]>([])
-    const selectedStudentIdList = useRef<string[]>([])
+    const answerStudentItem = useRef<StudentItem | null>(null)
     const studentData = useContext(DataContext)
 
     const rollStudentId = useCallback(() => {
-        const studentsIdList = Object.keys(studentData['students'])
-        answerStudentId.current = studentsIdList[getRangeRandom(0, studentsIdList.length - 1)]
+        answerStudentItem.current = studentData['students'][getRangeRandom(0, studentData['students'].length - 1)]
     }, [studentData])
 
     useEffect(() => {
@@ -31,21 +29,24 @@ const Stage = observer(() => {
 
     useEffect(() => autorun(() => {
         if (isGameFinished
-            || answerStudentId.current === ''
+            || answerStudentItem.current === null
             || selectStore.studentId === ''
-            || !(selectStore.studentId in studentData['students'])
-            || selectedStudentIdList.current.includes(selectStore.studentId)) {
+            || selectedStudentItemList.find(student => student['id'] === selectStore.studentId) !== undefined) {
             return
         }
 
-        setSelectedStudentItemList(prev => [...prev, studentData['students'][selectStore.studentId]])
-        selectedStudentIdList.current.push(selectStore.studentId)
+        const newStudentItem = studentData['students'].find(student => student['id'] === selectStore.studentId)
+
+        if (newStudentItem !== undefined) {
+            setSelectedStudentItemList(prev => [...prev, newStudentItem])
+        }
+
         setCurRound(prev => prev + 1)
 
-        if (selectStore.studentId === answerStudentId.current) {
+        if (selectStore.studentId === answerStudentItem.current['id']) {
             setIsGameFinished(true)
         }
-    }), [studentData, isGameFinished])
+    }), [studentData, isGameFinished, selectedStudentItemList])
 
     useEffect(() => {
         if (curRound >= totalRounds) {
@@ -60,7 +61,6 @@ const Stage = observer(() => {
 
         setCurRound(0)
         setSelectedStudentItemList([])
-        selectedStudentIdList.current = []
         setIsGameFinished(false)
         rollStudentId()
         selectStore.setStudentId('')
@@ -69,7 +69,6 @@ const Stage = observer(() => {
 
     return <Container
         height='100%'
-        // minWidth='420px'
         flexGrow='1'
         className='stage'
     >
@@ -84,23 +83,23 @@ const Stage = observer(() => {
             <StageBanner
                 curRound={curRound}
                 totalRounds={totalRounds}
-                answerStudentAvatarUrl={isGameFinished && answerStudentId.current !== ''
-                    ? studentData['students'][answerStudentId.current]['avatarUrl']
+                answerStudentAvatarUrl={isGameFinished && answerStudentItem.current !== null
+                    ? answerStudentItem.current['avatarUrl']
                     : ''}
-                answerStudentFullName={isGameFinished && answerStudentId.current !== ''
-                    ? (languageStore.language in studentData['students'][answerStudentId.current]['displayName']['full']
-                        ? studentData['students'][answerStudentId.current]['displayName']['full'][languageStore.language]
+                answerStudentFullName={isGameFinished && answerStudentItem.current !== null
+                    ? (languageStore.language in answerStudentItem.current['displayName']['full']
+                        ? answerStudentItem.current['displayName']['full'][languageStore.language]
                         : '')
                     : ''}
-                answerStudentVariant={isGameFinished && answerStudentId.current !== ''
-                    ? (languageStore.language in studentData['students'][answerStudentId.current]['variant']
-                        ? studentData['students'][answerStudentId.current]['variant'][languageStore.language]
+                answerStudentVariant={isGameFinished && answerStudentItem.current !== null
+                    ? (languageStore.language in answerStudentItem.current['variant']
+                        ? answerStudentItem.current['variant'][languageStore.language]
                         : '')
                     : ''}
             />
             <SelectedStudentList
                 selectedStudentItemList={selectedStudentItemList}
-                answerStudent={studentData['students'][answerStudentId.current]}
+                answerStudent={answerStudentItem.current}
                 isGameFinished={isGameFinished}
             />
         </Flex>

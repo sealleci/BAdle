@@ -3,6 +3,7 @@ import { PlaywrightCrawler } from '@crawlee/playwright'
 import type { Page } from 'playwright'
 
 interface StudentItem {
+    id: string
     displayName: {
         full: Record<string, string>
         abbrev: Record<string, string>
@@ -17,10 +18,10 @@ interface StudentItem {
     avatarUrl: string
 }
 
-const studentData: { students: Record<string, StudentItem> } = { 'students': {} }
+const studentData: { students: StudentItem[] } = { 'students': [] }
 let studentUrlList: string[] = []
 
-function scrapeCJKHtml(rawAbbrevName: string, rawFullName: string, studentItem: StudentItem, language: string): StudentItem {
+function scrapeStudentName(rawAbbrevName: string, rawFullName: string, studentItem: StudentItem, language: string): StudentItem {
     function deleteNotation(raw: string): string {
         let result = ''
         let isNotation = false
@@ -43,18 +44,30 @@ function scrapeCJKHtml(rawAbbrevName: string, rawFullName: string, studentItem: 
     if (/.+?\s*[（(].+[）)]$/.test(rawAbbrevName)) {
         const tmpNameRxMatch1 = rawAbbrevName.match(/(.+?)\s*[（(].+[）)]/)
         const tmpNameRxMatch2 = rawAbbrevName.match(/.+?\s*[（(](.+)[）)]/)
+
         abbrevName = tmpNameRxMatch1 !== null ? tmpNameRxMatch1[1].trim() : ''
-        studentItem['variant'][language] = tmpNameRxMatch2 !== null ? tmpNameRxMatch2[1].trim() : ''
+        studentItem['variant'][language] = deleteNotation(tmpNameRxMatch2 !== null ? tmpNameRxMatch2[1].trim() : '')
     }
 
     studentItem['displayName']['full'][language] = deleteNotation(rawFullName.replace(/\s+/g, ' '))
-    studentItem['displayName']['abbrev'][language] = deleteNotation(abbrevName)
+
+    if (studentItem['school'] === 'etc' || studentItem['school'] === 'tokiwadai') {
+        const splitFullNames = studentItem['displayName']['full'][language].split(/\s+/)
+
+        studentItem['displayName']['abbrev'][language] = deleteNotation(
+            splitFullNames.length > 1
+                ? splitFullNames[splitFullNames.length - 1]
+                : studentItem['displayName']['full'][language])
+    } else {
+        studentItem['displayName']['abbrev'][language] = deleteNotation(abbrevName)
+    }
 
     return studentItem
 }
 
-async function parseStudentInfo(page: Page): Promise<StudentItem> {
+async function parseStudentInfo(idName: string, page: Page): Promise<StudentItem> {
     let studentItem: StudentItem = {
+        'id': idName,
         'displayName': {
             'full': {},
             'abbrev': {}
@@ -81,19 +94,8 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
     await page.locator('#ba-navbar-languageselector-en').click()
     await page.locator('body.font-en').waitFor()
     studentItem = await page.locator('#loaded-module').evaluate(($post, studentItem) => {
-        const rawName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
-        let abbrevName = rawName
-
-        if (/.+?\s*\(.+\)$/.test(rawName)) {
-            const tmpNameRxMatch1 = rawName.match(/(.+?)\s*\(.+\)/)
-            const tmpNameRxMatch2 = rawName.match(/.+?\s*\((.+)\)/)
-            abbrevName = tmpNameRxMatch1 !== null ? tmpNameRxMatch1[1].trim() : ''
-            studentItem['variant']['en'] = tmpNameRxMatch2 !== null ? tmpNameRxMatch2[1].trim() : ''
-        }
-
-        studentItem['displayName']['full']['en'] = $post.querySelector('#ba-student-fullname')?.textContent?.trim().replace(/\s+/g, ' ') ?? ''
-        studentItem['displayName']['abbrev']['en'] = abbrevName
         const tmpSchoolRxMatch = $post.querySelector('#ba-student-school-img')?.getAttribute('src')?.match(/.*?School_Icon_(.+?)_.*/)
+
         studentItem['school'] = tmpSchoolRxMatch !== null && tmpSchoolRxMatch !== undefined ? tmpSchoolRxMatch[1].toLowerCase().trim() : ''
         studentItem['role'] = $post.querySelector('#ba-student-role-label')?.textContent?.toLowerCase().trim() ?? ''
         studentItem['damageType'] = $post.querySelector('#ba-student-attacktype-label')?.textContent?.toLowerCase().trim() ?? ''
@@ -105,7 +107,14 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         return studentItem
     }, studentItem)
 
-    await page.exposeFunction('scrapeCJKHtml', scrapeCJKHtml)
+    await page.exposeFunction('scrapeStudentName', scrapeStudentName)
+    studentItem = await page.locator('#loaded-module').evaluate(($post, studentItem) => {
+        const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
+        const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
+
+        return scrapeStudentName(rawAbbrevName, rawFullName, studentItem, 'en')
+    }, studentItem)
+
     await page.locator('#ba-navbar-languageselector').click()
     await page.locator('#ba-navbar-languageselector-kr').click()
     await page.locator('body.font-kr').waitFor()
@@ -113,7 +122,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
         const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
 
-        return scrapeCJKHtml(rawAbbrevName, rawFullName, studentItem, 'kr')
+        return scrapeStudentName(rawAbbrevName, rawFullName, studentItem, 'kr')
     }, studentItem)
 
     await page.locator('#ba-navbar-languageselector').click()
@@ -123,7 +132,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
         const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
 
-        return scrapeCJKHtml(rawAbbrevName, rawFullName, studentItem, 'jp')
+        return scrapeStudentName(rawAbbrevName, rawFullName, studentItem, 'jp')
     }, studentItem)
 
     await page.locator('#ba-navbar-languageselector').click()
@@ -133,7 +142,7 @@ async function parseStudentInfo(page: Page): Promise<StudentItem> {
         const rawAbbrevName = $post.querySelector('#ba-student-name')?.textContent?.trim() ?? ''
         const rawFullName = $post.querySelector('#ba-student-fullname')?.textContent?.trim() ?? ''
 
-        return scrapeCJKHtml(rawAbbrevName, rawFullName, studentItem, 'zh_cn')
+        return scrapeStudentName(rawAbbrevName, rawFullName, studentItem, 'zh_cn')
     }, studentItem)
 
     return studentItem
@@ -150,7 +159,7 @@ const studentCrawler = new PlaywrightCrawler({
         const tmpRxMatch = request.url.match(/https:\/\/schale\.gg\/\?chara=(.+)/)
         const idName = tmpRxMatch === null ? '' : tmpRxMatch[1].toLowerCase()
         log.info(`Student crawler is processing ${idName}...`)
-        studentData['students'][idName] = await parseStudentInfo(page)
+        studentData['students'].push(await parseStudentInfo(idName, page))
         await page.close()
     },
     async failedRequestHandler({ log, request }) {
@@ -168,7 +177,7 @@ const rootCrawler = new PlaywrightCrawler({
         const tmpRxMatch = request.url.match(/https:\/\/schale\.gg\/\?chara=(.+)/)
         const idName = tmpRxMatch === null ? '' : tmpRxMatch[1].toLowerCase()
         log.info(`Root crawler is processing ${idName}...`)
-        studentData['students'][idName] = await parseStudentInfo(page)
+        studentData['students'].push(await parseStudentInfo(idName, page))
 
         await page.locator('#student-select-grid').waitFor({ state: 'attached' })
         studentUrlList = await page.$$eval('#student-select-grid>.card-student', ($posts) => {
